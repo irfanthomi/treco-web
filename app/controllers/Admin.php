@@ -12,11 +12,11 @@ class Admin extends Rtx_controller
     function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('masuk') != TRUE) {
-            redirect(base_url(''));
-            $this->db->close();
-            exit();
-        };
+        // if ($this->session->userdata('masuk') != TRUE) {
+        //     redirect(base_url(''));
+        //     $this->db->close();
+        //     exit();
+        // };
         $this->load->model('M_admin');
         include APPPATH . 'third_party/password_encp.php';
     }
@@ -687,10 +687,11 @@ class Admin extends Rtx_controller
                 }
             }
             $cek = $this->db->get_where('setting', array('id_setting' => 1))->row_array();
-            @unlink('rn/home/img/' . $cek['logo']);
-            @unlink('rn/home/img/' . $cek['favicon']);
-            $logo = ($namafile[0]) ? $namafile[0] : '';
-            $favicon   = ($namafile[1]) ? $namafile[1] : '';
+            // @unlink('rn/home/img/' . $cek['logo']);
+            // @unlink('rn/home/img/' . $cek['favicon']);
+
+            $favicon = ($namafile[0]) ? $namafile[0] : '';
+            $logo   = ($namafile[1]) ? $namafile[1] : '';
             $data = array(
                 'Nama' => $this->input->post('Nama', TRUE),
                 'gambar_header' => $this->input->post('gambar_header', TRUE),
@@ -711,14 +712,13 @@ class Admin extends Rtx_controller
             );
 
             $this->db->update('setting', $data, array('id_setting' => 1));
-            $this->session->set_flashdata('message', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Edit Data Berhasil.</div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success fade-in"><i class="fa fa-check"></i>Edit Data Berhasil.</div>');
             redirect(base_url('admin/seting'));
         }
     }
     /* bagian slider*/
     public function slider($aksi = '', $id = '')
     {
-
         cek_session('admin');
         if (isset($_POST['add'])) {
             if (isset($_POST['add'])) {
@@ -1679,5 +1679,24 @@ class Admin extends Rtx_controller
             'xAxis' => $data_bulan
         );
         echo json_encode($json, JSON_NUMERIC_CHECK);
+    }
+    function uploadFile()
+    {
+        $_FILES['rtx']['name'];
+        $nmfile = "file_" . time();
+        $config['upload_path'] = './rn/upload/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+        // $config['max_width']            = 1882;
+        // $config['max_height']           = 450;
+        $config['file_name'] = $nmfile;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if ($this->upload->do_upload('rtx')) {
+            var_dump('rtx');
+            die;
+        } else {
+            var_dump('sdfdfddfgsuskesd');
+            die;
+        }
     }
 }

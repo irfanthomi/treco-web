@@ -33,33 +33,32 @@
     <!-- Custom Theme Style -->
     <link href="<?= base_url('assets/admin/') ?>css/custom.css" rel="stylesheet">
     <script src="<?= base_url('assets') ?>/ckeditor/ckeditor.js"></script>
-    <script src="<?= base_url('assets') ?>/ckeditor/styles.js"></script>
 </head>
 <script type="text/javascript">
-    function keluar() {
-        swal({
-                title: "Anda Yakin Untuk Keluar?",
-                text: "Keluar Dari Halaman Administrator Untuk Mengakhiri Session Anda ?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Sedang mengalihkan", {
-                        icon: "success",
-                    });
-                    window.location.href = "<?= base_url('admin/keluar') ?>";
-                } else {
+function keluar() {
+    swal({
+            title: "Anda Yakin Untuk Keluar?",
+            text: "Keluar Dari Halaman Administrator Untuk Mengakhiri Session Anda ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Sedang mengalihkan", {
+                    icon: "success",
+                });
+                window.location.href = "<?= base_url('admin/keluar') ?>";
+            } else {
 
-                    swal({
-                        title: "Anda Membatalkan Keluar Dari Halaman Administrator",
-                        icon: "success",
-                        button: "Tutup Dialog",
-                    });
-                }
-            });
-    }
+                swal({
+                    title: "Anda Membatalkan Keluar Dari Halaman Administrator",
+                    icon: "success",
+                    button: "Tutup Dialog",
+                });
+            }
+        });
+}
 </script>
 
 <body class="nav-md">

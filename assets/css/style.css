@@ -2594,3 +2594,23 @@ section {
 .active-nav {
   border-bottom: solid #e96b56;
 }
+
+.btn-basic {
+  display: inline-block;
+  background: #e96b56;
+  color: #fff;
+  padding: 6px 20px;
+  transition: 0.3s;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+}
+
+.btn-basic a {
+  color: #fff;
+}
+
+.logo-home {
+  object-fit: cover;
+  width: 90%;
+}

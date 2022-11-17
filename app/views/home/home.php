@@ -54,7 +54,7 @@
                     <div class="icon-box">
                         <i class="bi bi-clipboard-data"></i>
                         <h3><a href="">Berpengalaman</a></h3>
-                        <p>Berdiri sejak 1996, kami telah dipercaya sebagai salah satu distributor besi terlengkap di
+                        <p>Berdiri sejak 19XX, kami telah dipercaya sebagai salah satu distributor besi terlengkap di
                             Jakarta</p>
                     </div>
                 </div>
@@ -76,32 +76,17 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-6">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                <div class="col-lg-6 d-flex align-items-center">
+                    <img src="<?= base_url('rn/home/img/') ?><?= $setting->logo ?>" class=" logo-home img-fluid" alt="">
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                    <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate
-                            velit.</li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
-                            fugiat nulla pariatur.</li>
-                    </ul>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                <div class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
+                    <div>
+                        <h3><?= $setting->Nama ?></h3>
+
+                        <p>
+                            <?= $setting->tentang_universitas ?>
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -111,7 +96,12 @@
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
         <div class="container">
-
+            <div class="section-title">
+                <h2>Product</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="icon-box">
@@ -162,36 +152,83 @@
                 </div>
 
             </div>
+            <div class="text-center pt-3">
+                <a href="">
+                    <button class="btn-basic ">
+                        Lainnnya
+                    </button>
+                </a>
 
+            </div>
+            <hr>
         </div>
     </section><!-- End Services Section -->
+    <!-- Product -->
 
-    <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
         <div class="container">
-
             <div class="section-title">
-                <h2>Clients</h2>
+                <h2>Blogs</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
                     consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
                     fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
-
             <div class="clients-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div id="featured" class="featured">
+                            <div class="icon-box">
+                                <i class="bi bi-gem"></i>
+                                <h3><a href="">Berkualitas</a></h3>
+                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="featured" class="featured">
+                            <div class="icon-box">
+                                <i class="bi bi-gem"></i>
+                                <h3><a href="">Berkualitas</a></h3>
+                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="featured" class="featured">
+                            <div class="icon-box">
+                                <i class="bi bi-gem"></i>
+                                <h3><a href="">Berkualitas</a></h3>
+                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="featured" class="featured">
+                            <div class="icon-box">
+                                <i class="bi bi-gem"></i>
+                                <h3><a href="">Berkualitas</a></h3>
+                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="featured" class="featured">
+                            <div class="icon-box">
+                                <i class="bi bi-gem"></i>
+                                <h3><a href="">Berkualitas</a></h3>
+                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
-    </section><!-- End Clients Section -->
+
+        </div>
+    </section><!-- End Product Section -->
+
+
 
 </main><!-- End #main -->

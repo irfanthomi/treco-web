@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+
         <div class="clearfix"></div>
         <div class="col-md-6 col-sm-6  ">
             <div class="x_panel">
@@ -123,8 +124,7 @@
                             <label class="col-form-label col-md-2  label-align" for="first-name">Isi <span
                                     class="required">*</span>
                             </label>
-                            <div class="col-md-10 "><textarea class="form-control ckeditor" rows="8"
-                                    name="isi"></textarea>
+                            <div class="col-md-10 "><textarea id="editorAdd" rows="10" cols="80" name="isi"></textarea>
                             </div>
                         </div>
                         <div class="item form-group">
@@ -180,7 +180,8 @@ foreach ($halaman->result() as $halModal) : ?>
                             <label class="col-form-label col-md-2  label-align" for="first-name">Isi <span
                                     class="required">*</span>
                             </label>
-                            <div class="col-md-10 "><textarea class="form-control ckeditor" rows="8"
+                            <div class="col-md-10 "><textarea class="form-control "
+                                    id="editorEdit<?= $halModal->id_halaman; ?>" rows="20" cols="80"
                                     name="isi"><?= $halModal->isi; ?></textarea>
                             </div>
                         </div>
@@ -205,5 +206,14 @@ foreach ($halaman->result() as $halModal) : ?>
         </div>
     </div>
 </div>
+<script>
+CKEDITOR.replace('editorEdit' + <?= $halModal->id_halaman; ?>);
+</script>
 <?php endforeach; ?>
 <!-- /modals -->
+<script>
+CKEDITOR.replace('editorAdd', {
+    filebrowserBrowseUrl: '/browser/browse.php',
+    filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile'
+});
+</script>

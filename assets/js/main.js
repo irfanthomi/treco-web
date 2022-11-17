@@ -165,6 +165,7 @@
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
+    slidesPerView: 3,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -184,7 +185,7 @@
         spaceBetween: 80
       },
       992: {
-        slidesPerView: 6,
+        slidesPerView: 4,
         spaceBetween: 120
       }
     }

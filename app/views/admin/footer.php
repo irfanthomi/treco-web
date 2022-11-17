@@ -1,9 +1,9 @@
 <!-- footer content -->
 <footer>
-  <div class="pull-right">
-    Ikatan Dosen Menulis - IDM
-  </div>
-  <div class="clearfix"></div>
+    <div class="pull-right">
+        Ikatan Dosen Menulis - IDM
+    </div>
+    <div class="clearfix"></div>
 </footer>
 <!-- /footer content -->
 </div>
