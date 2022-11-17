@@ -7,46 +7,20 @@
             <div class="carousel-inner" role="listbox">
 
                 <!-- Slide 1 -->
-                <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
-                    <div class="carousel-container">
-                        <div class="carousel-content">
-                            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Eterna</span></h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
-                            <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                <?php $no = 1;
+                foreach ($slide->result_array() as $slid) : $active = $no++ == 1 ? "active" : ""; ?>
+                <!-- Slide <?= $no++ ?> -->
+                <div class="carousel-item <?= $active ?> "
+                    style=" background-image: url(<?= base_url('rn/slider/' . $slid['gambar']) ?>">
+                    <!-- <div class="carousel-container">
+                        <div class="carousel-content animate__fadeIn ">
+                            <h2 class="animate__animated animate__fadeInDown"><?= $slid['judul'] ?> <span>IDM</span>
+                            </h2>
+                            <p class="animate__animated animate__fadeInUp"><?= $slid['isi'] ?></p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
-                    <div class="carousel-container">
-                        <div class="carousel-content">
-                            <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
-                            <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-                    <div class="carousel-container">
-                        <div class="carousel-content">
-                            <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
-                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.</p>
-                            <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
 

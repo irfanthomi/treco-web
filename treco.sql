@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : IDM
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 80027
+ Source Server Version : 80029
  Source Host           : localhost:3306
- Source Schema         : idm_new
+ Source Schema         : treco
 
  Target Server Type    : MySQL
- Target Server Version : 80027
+ Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 16/11/2022 11:17:48
+ Date: 17/11/2022 10:06:46
 */
 
 SET NAMES utf8mb4;
@@ -160,7 +160,7 @@ CREATE TABLE `halaman` (
   PRIMARY KEY (`id_halaman`),
   KEY `id_user` (`id_user`),
   KEY `id_halaman` (`id_halaman`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of halaman
@@ -170,6 +170,7 @@ INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `id_user`, `hits`, `tanggal
 INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `id_user`, `hits`, `tanggal`, `gambar`) VALUES (27, 'Syarat Keanggotaan', '<h2><strong>Mengapa harus bergabung di IDM ???</strong></h2>\r\n\r\n<p> </p>\r\n\r\n<p>a. Peraturan Menteri Riset, Teknologi, dan Pendidikan Tinggi Republik Indonesia Nomor 44 Tahun 2015 menjelaskan bahwa Standar Nasional Pendidikan Tinggi terkait dengan Standar Nasional Pendidikan dan Standar Nasional Penelitian, serta Standar Nasional Pengabdian kepada Masyarakat. pada Perguruan Tinggi yang berlaku di seluruh wilayah hukum Negara Kesatuan Republik Indonesia.</p>\r\n\r\n<p>b. Guna berpartisipasi dalam mewujudkan program peningkatan publikasi yang berkualitas, serta mengorganisir seluruh dosen dalam kegiatan penulisan karya ilmiah yang dapat memberikan dampak besar dan luas maka dibentuklah Asosiasi Ikatan Dosen Menulis disingkat IDM Asosisi ini adalah lembaga profesional yang memiliki visi menjadi yang terdepan dalam menghasilkan karya-karya ilmiah dosen yng dapat dipublikasikan berupa artikel ilmiah dan buku.</p>\r\n\r\n<p>c. IDM adalah wadah pemersatu kegiatan para dosen di seluruh Perguruan Tinggi di Indonesia danluar negeri dalam upaya menghasilkan karya ilmiah.</p>\r\n\r\n<p>d. IDM mendukung program KEMENRISTEK BRIN agar Indonesia bersaing secara global dan mandiri dalam menghasilkan karya ilmiah bermutu.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Dengan ini untuk rekan-rekan yang ingin bergabung dengan <strong>Ikatan Dosen Menulis (IDM)</strong> para <strong>Pratisi, Dosen dan Guru</strong> yang memiliki niat untuk bersama didalam membangun <strong>Negara Kesatuan Republik Indonesia (NKRI)</strong> diharapkan dapat bergabung pada Rakornas, Kongres dan Semnas atau Kegiatan <strong>Ikatan Dosen Menulis (IDM)</strong> ini :</p>\r\n\r\n<p><strong>Persyaratan:</strong><br>\r\n1. Mengisi Form pendaftaran</p>\r\n\r\n<p>2. Fotocopy KTP</p>\r\n\r\n<p>3. Foto Terbaik</p>\r\n\r\n<p>4. Bukti transfer ke rekening</p>\r\n\r\n<p>Persyaratan 1 s/d 4 dikirim via email ke <a href=\"mailto:idm.bandoeng@gmail.com\">idm.bandoeng@gmail.com</a></p>\r\n\r\n<p><strong>Fasilitas yang diperoleh:</strong></p>\r\n\r\n<ol>\r\n <li>Keikutsertaan dalam kegiatan kolaborasi penulisan karya ilmiah, baik berupa artikel maupun buku secara gratis</li>\r\n <li>E-sertifikat pelatihan penulisan karya ilmiah</li>\r\n <li>Pendampingan Haki/Paten/Merek.</li>\r\n <li>Pendampingan Penulisan Buku Ajar,monograf dan buku referensi ber-ISBN</li>\r\n <li>Pendampingan Reviewer Jurnal</li>\r\n <li>Pendampingan Penulisan dan Submit Jurnal bereputasi dan terindex</li>\r\n <li>Diskon 30-50?gi anggota IDM untuk setiap kegiatan/ workshop/training yang dikelola IDM/Mitra</li>\r\n <li>Gratis mengikuti/partisipan Nasional/International Conference</li>\r\n <li>Mendapatkan kartu keanggotaan IDM seumur hidup</li>\r\n <li>Dapat mengajukan kerjasama dan mempublikasikan karya ilmiah hasil penelitian dengan Tim IDM/Mitra baik sebagai Penulis 1, 2 dll di Jurnal Nasional dan Internasional Terindeks (Syarat dan Ketentuan Berlaku)</li>\r\n <li>Mendapat network dan pengalaman dari dosen-dosen se-Indonesia</li>\r\n</ol>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Biaya registrasi pendaftaran IDR 50.000. Biaya keanggotaan hanya IDR 100.000/tahun.</strong></p>\r\n\r\n<p>????Transfer ke Rekening:</p>\r\n\r\n<p>Bank Mandiri. An Ivonne Ayesha</p>\r\n\r\n<p>An. Yayasan Fatih Al Khairiyyah</p>\r\n\r\n<p><strong>Contact Person</strong></p>\r\n\r\n<p>Tim Admin : <strong>+628526326369</strong> (WA Only) Bapak Danyl Mallisza</p>\r\n', '58', '', '2022-05-09', NULL);
 INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `id_user`, `hits`, `tanggal`, `gambar`) VALUES (32, 'semboyan', '<p><img alt=\"\" src=\"/file/images/video-bg.jpeg\"><img alt=\"\" src=\"/file/images/video-bg.jpeg\">Ikatan Dosen Menulis (IDM) adalah organisasi profesi, yaitu terdiri dari praktisi, dosen dan Guru, organisasi ini merupakan sebuah organisasi nir-laba (non profit organization) yang menghimpun serta suatu wadah untuk pemersatu didalam meningkatkan sumber daya manusia Indonesia. Melalui asosiasi nantinya diharapkan agar dapat menambah serta meningkatkan kemampuan menulis sehingga dapat memacu semangat untuk melahirkan karya-karya tulis yang berkualitas kedepannya.</p>\r\n', '58', '', '2022-06-30', 'file_1652292716.png');
 INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `id_user`, `hits`, `tanggal`, `gambar`) VALUES (31, 'Daftar Anggota', '', '58', '', '2022-05-09', NULL);
+INSERT INTO `halaman` (`id_halaman`, `judul`, `isi`, `id_user`, `hits`, `tanggal`, `gambar`) VALUES (33, 'Contact', '<h2>Alamat</h2>\r\n\r\n<ul>\r\n <li>Head Office Gedung covesia Lt2.2,J.Veteran No.69F,Purus,Kec.Padang Barat,Kota Padang Sumatera Barat</li>\r\n <li>085274516100</li>\r\n <li>admin.ho@treco.id</li>\r\n <li>www.treco.id</li>\r\n</ul>\r\n', '58', '', '2022-11-17', 'file_1668654086.jpeg');
 COMMIT;
 
 -- ----------------------------
@@ -273,21 +274,15 @@ CREATE TABLE `menu` (
 -- Records of menu
 -- ----------------------------
 BEGIN;
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (178, 0, 'kontak', '#', 'Ya', 'Bottom', 14);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (178, 0, 'kontak', 'halaman/detail/33/contact', 'Ya', 'Bottom', 15);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (233, 174, 'Etika', '', 'Ya', 'Bottom', 5);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (213, 188, 'JSCR', 'https://idm.or.id/JSCR/', 'Ya', 'Bottom', 10);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (174, 0, 'Profil', '#', 'Ya', 'Bottom', 1);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (188, 0, 'Jurnal', '#', 'Ya', 'Bottom', 7);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (211, 188, 'JCS', 'https://idm.or.id/JCS/', 'Ya', 'Bottom', 8);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (212, 188, 'JSER', 'https://idm.or.id/JSER/', 'Ya', 'Bottom', 9);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (193, 0, 'Seminar', '#', 'Ya', 'Bottom', 18);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (188, 0, 'Product', '#', 'Ya', 'Bottom', 7);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (193, 0, 'Galery', 'galery', 'Ya', 'Bottom', 11);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (214, 174, 'Pengantar', 'halaman/detail/25/pengantar', 'Ya', 'Bottom', 2);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (221, 0, 'Keanggotaan', '', 'Ya', 'Bottom', 11);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (222, 221, 'Syarat Keanggotaan', 'halaman/detail/27/syarat-keanggotaan', 'Ya', 'Bottom', 12);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (223, 221, 'Daftar Anggota', 'team', 'Ya', 'Bottom', 13);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (225, 0, 'Publikasi Internasional', '', 'Ya', 'Bottom', 15);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (226, 225, 'Journal Scopus', 'submission/10/journal_scopus', 'Ya', 'Bottom', 16);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (227, 225, 'Prosiding Scopus', 'submission/11/prosiding_scopus', 'Ya', 'Bottom', 17);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (221, 0, 'Keanggotaan', '', 'Ya', 'Bottom', 12);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (222, 221, 'Syarat Keanggotaan', 'halaman/detail/27/syarat-keanggotaan', 'Ya', 'Bottom', 13);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (223, 221, 'Daftar Anggota', 'team', 'Ya', 'Bottom', 14);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (232, 174, 'Logo dan Semboyan', 'halaman/detail/32/semboyan', 'Ya', 'Bottom', 4);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (231, 174, 'Visi dan Misi', '', 'Ya', 'Bottom', 3);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (240, 174, 'Struktur Organisasi', 'organisasi', 'Ya', 'Bottom', 6);
@@ -337,17 +332,15 @@ CREATE TABLE `slider` (
   `gambar` varchar(30) DEFAULT NULL,
   `tanggal_upload` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id_slider`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of slider
 -- ----------------------------
 BEGIN;
-INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (73, 'Cover Buku', 'Salah satu produk hasil dari pelatihan penulisan buku ajar ', '', 'file_1645868526.jpeg', '2022-05-10');
-INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (74, 'Pelatihan penulisan buku ajar', 'salah kegiatan IDM yang bekerjasama dengan Universitas Ekasakti dalam pelatihan penulisan buku ajar ', '', 'file_1645868611.jpeg', '2022-05-10');
-INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (77, 'slide 3', 'tgh', 'tyh', 'file_1645346393.jpg', '2022-02-20');
-INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (79, 'Pelatihan Penulisn Buku Ajar', '', '', 'file_1656552292.jpg', '2022-06-30');
-INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (80, 'workshop Penulisan E-BOOK', '', '', 'file_1656552390.jpg', '2022-06-30');
+INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (81, 'Baja Ringan', 'Menyediakan Besi Perumahan', '', 'file_1668653329.jpeg', '2022-11-17');
+INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (82, 'rumah', '', '', 'file_1668653188.jpeg', '2022-11-17');
+INSERT INTO `slider` (`id_slider`, `judul`, `isi`, `url`, `gambar`, `tanggal_upload`) VALUES (83, 'test', '', '', 'file_1668653308.png', '2022-11-17');
 COMMIT;
 
 -- ----------------------------
@@ -431,7 +424,7 @@ CREATE TABLE `video` (
   `id_yt` varchar(100) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `tanggal` date NOT NULL,
-  `tampil_depn` enum('N','Y','','') NOT NULL
+  `tampil_depn` enum('N','Y','') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- ----------------------------
