@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CodeIgniter
+ * Rtx
  *
  * An open source application development framework for PHP
  *
@@ -27,12 +27,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  *
- * @package	CodeIgniter
+ * @package	Rtx
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
  * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
+ * @link	https://Rtx.com
  * @since	Version 1.0.0
  * @filesource
  */
@@ -94,7 +94,7 @@ switch (ENVIRONMENT) {
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-$system_path = 'system';
+$system_path = 'lib/system';
 
 /*
  *---------------------------------------------------------------
@@ -107,11 +107,11 @@ $system_path = 'system';
  * use an absolute (full) server path.
  * For more info please see the user guide:
  *
- * https://codeigniter.com/user_guide/general/managing_apps.html
+ * https://Rtx.com/user_guide/general/managing_apps.html
  *
  * NO TRAILING SLASH!
  */
-$application_folder = 'application';
+$application_folder = 'app';
 
 /*
  *---------------------------------------------------------------
@@ -286,4 +286,4 @@ define('VIEWPATH', $view_folder . DIRECTORY_SEPARATOR);
  *
  * And away we go...
  */
-require_once BASEPATH . 'core/CodeIgniter.php';
+require_once BASEPATH . 'core/Rtx.php';
