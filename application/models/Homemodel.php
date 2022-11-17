@@ -13,21 +13,21 @@ class Homemodel extends CI_model
 	}
 
 	public function team_pengurus()
-  {
-    $this->db->select('t.*,j.jabatan as jb');
-        $this->db->join('jabatan j', 'j.id = t.jabatan');
-        $this->db->where('t.jabatan',3);
-        $team = $this->db->get('team t');
-        return $team;
-  }
-  public function team_pembina()
-  {
-    $this->db->select('t.*,j.jabatan as jb');
-        $this->db->join('jabatan j', 'j.id = t.jabatan');
-        $this->db->where('t.jabatan', 4);
-        $team = $this->db->get('team t');
-        return $team;
-  }
+	{
+		$this->db->select('t.*,j.jabatan as jb');
+		$this->db->join('jabatan j', 'j.id = t.jabatan');
+		$this->db->where('t.jabatan', 3);
+		$team = $this->db->get('team t');
+		return $team;
+	}
+	public function team_pembina()
+	{
+		$this->db->select('t.*,j.jabatan as jb');
+		$this->db->join('jabatan j', 'j.id = t.jabatan');
+		$this->db->where('t.jabatan', 4);
+		$team = $this->db->get('team t');
+		return $team;
+	}
 
 	public function depan_link_bottom($posisi)
 	{
@@ -43,7 +43,11 @@ class Homemodel extends CI_model
 	{
 		return $this->db->query("SELECT * FROM slider ORDER BY id_slider  desc limit 6");
 	}
+	function album()
+	{
 
+		return $this->db->get('album')->result_array();
+	}
 
 	public function artikel_awal()
 	{
@@ -88,21 +92,21 @@ class Homemodel extends CI_model
 	/* team */
 	function team($batas, $offset)
 	{
-		
+
 		$this->db->select('t.*, j.jabatan as jb');
 		$this->db->order_by('t.id_team', 'desc');
-        $this->db->join('jabatan j', 'j.id = t.jabatan');
+		$this->db->join('jabatan j', 'j.id = t.jabatan');
 		$query = $this->db->get('team t', $batas, $offset);
 		return $query;
 	}
 
 	public function team_list()
-  {
-    $this->db->select('t.*,j.jabatan as jb');
-        $this->db->join('jabatan j', 'j.id = t.jabatan');
-        $team = $this->db->get('team t');
-        return $team;
-  }
+	{
+		$this->db->select('t.*,j.jabatan as jb');
+		$this->db->join('jabatan j', 'j.id = t.jabatan');
+		$team = $this->db->get('team t');
+		return $team;
+	}
 
 	function video($batas, $offset)
 	{
@@ -115,7 +119,7 @@ class Homemodel extends CI_model
 	function galeri($batas, $offset)
 	{
 		$this->db->order_by('id_galeri', 'desc');
-		$query = $this->db->get('galeri', $batas, $offset);
+		$query = $this->db->get('galeri', $batas, $offset)->result_array();
 		return $query;
 	}
 

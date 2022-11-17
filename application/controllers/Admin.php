@@ -1156,9 +1156,7 @@ class Admin extends CI_controller
                         'tanggal' => date("Y-m-d"),
                         'id_admin' => $this->session->userdata('id_user')
                     );
-                    $cek = $this->db->update('galeri', $data, array(
-                        'id_galeri'
-                    ));
+                    $cek = $this->db->update('galeri', $data, ['id_galeri' => $id]);
                     if ($cek) {
                         $this->session->set_flashdata('pesan', '<div class="text-success">Slider Berhasil Di Tambahkan</div>');
                         redirect(base_url('admin/galeri'));
@@ -1181,9 +1179,7 @@ class Admin extends CI_controller
                             'tanggal' => date("Y-m-d"),
                             'id_admin' => $this->session->userdata('id_user')
                         );
-                        $cek = $this->db->update('galeri', $data, array(
-                            'id_galeri' => $id
-                        ));
+                        $cek = $this->db->update('galeri', $data, ['id_galeri' => $id]);
                         if ($cek) {
                             $this->session->set_flashdata('pesan', '<div class="text-success">Slider Berhasil Di Edit</div>');
                             redirect(base_url('admin/galeri'));

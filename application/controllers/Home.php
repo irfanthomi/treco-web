@@ -264,6 +264,7 @@ class Home extends CI_controller
 		$this->pagination->initialize($config);
 		$x['pagination']		= $this->pagination->create_links();
 		$x['galeri']	 = $this->homemodel->galeri($batas, $offset);
+		$x['album']	 = $this->homemodel->album();
 		$x['judul'] = "Galeri Foto";
 		$this->template->load('template', 'home/galeri_foto', $x);
 	}
@@ -415,7 +416,7 @@ class Home extends CI_controller
 			'page' => "Struktur Organisasi",
 			'team'   => $this->homemodel->team_list(),
 			'team_pembina' => $this->homemodel->team_pembina(),
-            'team_pengurus' => $this->homemodel->team_pengurus(),
+			'team_pengurus' => $this->homemodel->team_pengurus(),
 		];
 		template('organisasi', $x);
 	}

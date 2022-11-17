@@ -135,6 +135,7 @@ class M_admin extends CI_model
     return $this->db->get();
   }
 
+
   function artikel_jumlah()
   {
     $this->db->select('*, sum(id_artikel) as jumlah');
