@@ -1822,17 +1822,17 @@ class Admin extends Rtx_controller
     public function productDelete($id)
     {
         cek_session('admin');
-        $query = $this->M_admin->select_where('artikel', 'id_artikel', $id);
+        $query = $this->M_admin->select_where('product', 'product_id', $id);
         $row = $query->row();
         if ($row->gambar != "") {
-            unlink('./rn/gambar/' . $row->gambar);
+            unlink('./rn/product/image/' . $row->product_image);
         } else {
         }
 
-        $this->db->delete("artikel", array(
-            'id_artikel' => $id
+        $this->db->delete("product", array(
+            'product_id' => $id
         ));
         $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
-        redirect(base_url('admin/artikel'));
+        redirect(base_url('admin/product'));
     }
 }
