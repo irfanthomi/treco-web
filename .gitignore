@@ -1,11 +1,11 @@
-application/logs/*
-application/config/database.php
-!application/logs/index.html
-!application/logs/index.php
-!application/logs/.htaccess
+app/logs/*
+app/config/database.php
+!app/logs/index.html
+!app/logs/index.php
+!app/logs/.htaccess
 /vendor/
 mdbqwerty/
 JSER/
 JCS/
 JSCR/
-application/.DS_Store
+app/.DS_Store
