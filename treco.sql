@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : Localhost
  Source Server Type    : MySQL
- Source Server Version : 80029
+ Source Server Version : 80028
  Source Host           : localhost:3306
  Source Schema         : treco
 
  Target Server Type    : MySQL
- Target Server Version : 80029
+ Target Server Version : 80028
  File Encoding         : 65001
 
- Date: 17/11/2022 23:33:21
+ Date: 19/11/2022 12:19:34
 */
 
 SET NAMES utf8mb4;
@@ -290,6 +290,55 @@ INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `posit
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (193, 0, 'Galery', 'galeri', 'Ya', 'Bottom', 6);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (214, 174, 'Tentang Kami', 'halaman/detail/25/tentang', 'Ya', 'Bottom', 2);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (231, 174, 'Visi dan Misi', 'halaman/detail/35/visi--misi', 'Ya', 'Bottom', 3);
+COMMIT;
+
+-- ----------------------------
+-- Table structure for product
+-- ----------------------------
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `product_category` int NOT NULL,
+  `product_image` varchar(255) DEFAULT NULL,
+  `product_description` varchar(255) DEFAULT NULL,
+  `ctreateAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createBy` int DEFAULT NULL,
+  PRIMARY KEY (`product_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of product
+-- ----------------------------
+BEGIN;
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (1, 'Besi Lunak', 1, 'file_1668834563.jpeg', 'kj', '2022-11-18 10:34:01', '2022-11-19 12:09:23', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (2, 'Baja Ringan', 1, 'file_1668834583.png', 'kjnkjn', '2022-11-18 10:34:24', '2022-11-19 12:09:43', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (3, 'Kayu Jati', 2, 'file_1668834599.png', 'klk', '2022-11-18 10:35:07', '2022-11-19 12:09:59', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (4, 'Kayu mahogani', 2, 'product_1668756910.png', 'jhkj', '2022-11-18 14:35:10', '2022-11-19 12:02:46', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (5, 'Besi basian', 1, 'product_1668756981.png', NULL, '2022-11-18 14:36:21', '2022-11-18 14:36:21', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (6, 'rtx', 1, 'product_1668757112.jpeg', NULL, '2022-11-18 14:38:32', '2022-11-18 14:38:32', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (7, 'Kayu mahogani 123', 2, 'product_1668757931.jpg', 'sdqsdqqwewe', '2022-11-18 14:52:11', '2022-11-18 14:52:11', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (8, 'basi123', 1, 'product_1668758147.jpg', '09807', '2022-11-18 14:55:47', '2022-11-19 12:03:09', NULL);
+COMMIT;
+
+-- ----------------------------
+-- Table structure for product_category
+-- ----------------------------
+DROP TABLE IF EXISTS `product_category`;
+CREATE TABLE `product_category` (
+  `product_category_id` int NOT NULL AUTO_INCREMENT,
+  `product_category_name` varchar(255) NOT NULL,
+  `product_category_description` varchar(255) NOT NULL,
+  PRIMARY KEY (`product_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of product_category
+-- ----------------------------
+BEGIN;
+INSERT INTO `product_category` (`product_category_id`, `product_category_name`, `product_category_description`) VALUES (1, 'Besi', 'Kategori Besi');
+INSERT INTO `product_category` (`product_category_id`, `product_category_name`, `product_category_description`) VALUES (2, 'Kayu', 'kategory kayu');
 COMMIT;
 
 -- ----------------------------
