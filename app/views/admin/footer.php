@@ -48,7 +48,7 @@
 <script src="<?= base_url('assets/admin/js') ?>/daterangepicker.js"></script>
 <script src="<?= base_url('assets/admin/js') ?>/jquery.nestable.js"></script>
 <!-- Custom Theme Scripts -->
-<script src="<?= base_url('assets/vendor') ?>/dropzone/dist/min/dropzone.min.js"></script>
+<!-- <script src="<?= base_url('assets/vendor') ?>/dropzone/dist/min/dropzone.min.js"></script> -->
 <script src="<?= base_url('assets/admin/js') ?>/custom.js"></script>
 
 </body>

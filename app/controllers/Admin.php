@@ -61,9 +61,7 @@ class Admin extends Rtx_controller
     }
     // fungsi dari artikel
 
-    public
-
-    function artikel()
+    public function artikel()
     {
         $x['judul'] = "Data informasi /Berita";
         $x['data'] = $this->M_admin->artikel();
@@ -1698,5 +1696,143 @@ class Admin extends Rtx_controller
             var_dump('sdfdfddfgsuskesd');
             die;
         }
+    }
+
+
+
+
+    // product
+    public function product()
+    {
+
+        if (isset($_POST['add'])) {
+            // var_dump($_POST);
+            // die;
+            $nmfile = "product_" . time(); //nama file saya beri nama langsung dan diikuti fungsi time
+            $config['upload_path'] = './rn/product/image/'; //path folder
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+            $config['max_size'] = '4048'; //maksimum besar file 2M
+            $config['file_name'] = $nmfile; //nama yang terupload nantinya
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($_FILES['product_image']['name']) {
+                if ($this->upload->do_upload('product_image')) {
+                    $gbr = $this->upload->data();
+                    $gambar = $gbr['file_name'];
+                    $product_name = $this->input->post('product_name');
+                    $product_category = $this->input->post('product_category');
+                    $product_description = $this->input->post('product_description');
+                    $createBy = $this->session->userdata('id_user');
+                    $dataProduct = array(
+                        'product_name' => $product_name,
+                        'product_category' => $product_category,
+                        'product_description' => $product_description,
+                        'product_image' => $gambar,
+                        'createBy' => $createBy,
+                    );
+                    $this->M_admin->insertdata('product', $dataProduct);
+                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
+                    redirect(base_url('admin/product'));
+                } else {
+                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</div>'));
+                    redirect(base_url('admin/product'));
+                }
+            } else {
+                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Gambar Tidak ADA</span>');
+                redirect(base_url('admin/product'));
+            }
+        } else {
+            $data = [
+                'judul' => "List Product",
+                'product' => $this->M_admin->product(),
+                'product_category' => $this->db->get('product_category')->result_array(),
+            ];
+            $this->load->view('admin/header', $data);
+            $this->load->view('admin/product');
+            $this->load->view('admin/footer');
+        }
+    }
+
+    function productEdit($id = '')
+    {
+        cek_table('product', 'product_id', $id);
+        if ($id == '') {
+            redirect(base_url('admin/product'));
+        }
+        $product = $this->M_admin->productEdit($id);
+        $x = [
+            'judul' => "Edit Product",
+            'aksi' => "edit",
+            'product' => $product,
+            'product_category' => $this->db->get('product_category')->result_array()
+        ];
+        if (isset($_POST['edit'])) {
+            $product_name = $this->input->post('product_name');
+            $product_category = $this->input->post('product_category');
+            $product_description = $this->input->post('product_description');
+            $id_user = $this->session->userdata('id_user');
+            if (empty($_FILES['product_image']['name'])) {
+                $dataProduct = array(
+                    'product_name' => $product_name,
+                    'product_category' => $product_category,
+                    'product_description' => $product_description,
+                );
+                $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
+                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
+                redirect(base_url('admin/product'));
+            } else {
+                if ($product['product_image'] != "") {
+                    unlink('./rn/product/img/' . $product['product_image']);
+                } else {
+                }
+
+                $nmfile = "file_" . time();
+                $config['upload_path'] = './rn/product/image/';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+                $config['max_size'] = '4048';
+                $config['file_name'] = $nmfile; //nama yang terupload nantinya
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+                if ($this->upload->do_upload('product_image')) {
+                    @unlink('./rn/product/image' . $product['product_image']);
+                    $gbr = $this->upload->data();
+                    $gambar = $gbr['file_name'];
+                    $dataProduct = [
+                        'product_name' => $product_name,
+                        'product_category' => $product_category,
+                        'product_description' => $product_description,
+                        'product_image' => $gambar,
+                    ];
+                    $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
+                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
+                    redirect(base_url('admin/product'));
+                } else {
+                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</span>'));
+                    redirect(base_url('admin/product'));
+                }
+            }
+        } else {
+            $x['judul'] = "Edit Product";
+            $this->load->view('admin/header', $x);
+            $this->load->view('admin/product_edit');
+            $this->load->view('admin/footer');
+        }
+    }
+
+    public function productDelete($id)
+    {
+        cek_session('admin');
+        $query = $this->M_admin->select_where('artikel', 'id_artikel', $id);
+        $row = $query->row();
+        if ($row->gambar != "") {
+            unlink('./rn/gambar/' . $row->gambar);
+        } else {
+        }
+
+        $this->db->delete("artikel", array(
+            'id_artikel' => $id
+        ));
+        $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
+        redirect(base_url('admin/artikel'));
     }
 }

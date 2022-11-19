@@ -22,6 +22,25 @@ class M_admin extends CI_model
     return $this->db->query("SELECT * from $table where $param='$bidang'");
   }
 
+  function product()
+  {
+    $this->db->select('p.*,pc.product_category_name');
+    $this->db->from('product p');
+    $this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
+
+    return $this->db->get()->result_array();
+  }
+  function productEdit($id)
+  {
+    $this->db->select('p.*,pc.product_category_name');
+    $this->db->from('product p');
+    $this->db->where('product_id', $id);
+
+    $this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
+    return $this->db->get()->row_array();
+  }
+
+
   function artikel()
   {
     return $this->db->query('SELECT * FROM artikel order by id_artikel desc');
