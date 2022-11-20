@@ -91,7 +91,7 @@
 
                 <i class=" p-2 bi bi-grid-fill mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            <div class="box d-flex position-relative">
+            <div class="box d-flex align-items-center position-relative">
                 <div id="mobile-topbar" class="d-flex">
                     <div class="px-1 social-links  d-flex align-items-center">
                         <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></i></a>
