@@ -50,7 +50,7 @@
                         <img class="py-2" src="<?= base_url('') ?>rn/home/img/logo.png" alt="">
                     </div>
                 </div>
-                <div class="  col-md-6  contact-info d-flex align-items-center">
+                <div class=" d-none d-sm-flex col-md-6  contact-info d-flex align-items-center">
                     <div class=" d-flex contact-info-detail justify-content-center  px-3 border-end">
                         <div class="fs-1"><i class="bi bi-telephone d-flex align-items-center ms-4"></i></div>
                         <div class=" ms-2">
@@ -79,24 +79,31 @@
 
     <!-- ======= Header ======= -->
     <header id="header" class="border-top d-flex align-items-center">
-        <div class="container h-full d-flex justify-content-between align-items-center">
+        <div class="container  d-flex justify-content-between align-items-center">
 
 
-            <nav id="navbar" class="h-full navbar">
-                <div class="h-full">
+            <nav id="navbar" class=" navbar">
+                <div class="">
                     <?= main_menu('Bottom'); ?>
                 </div>
 
-                <i class="bi bi-grid-fill mobile-nav-toggle"></i>
+                <i class=" p-2 bi bi-grid-fill mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            <div id="topbar" class="d-flex">
-                <div class="px-1 social-links d-none d-md-flex align-items-center">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-                </div>
+            <div class="box d-flex">
+                <div id="mobile-topbar" class="d-flex">
+                    <div class="px-1 social-links  d-flex align-items-center">
+                        <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
 
+                </div>
+                <div class="d-flex ps-4">
+                    <div class="container-2">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                </div>
             </div>
 
         </div>

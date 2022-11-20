@@ -26,7 +26,7 @@ function build_main_menu($parent, $menu)
     if ($parent == '0') {
       $html .= " <ul class='h-full' >";
       if (isset($menu['position']['Bottom']) == "Bottom") {
-        $html .= "<li class='h-full active-nav text-uppercase'  ><a class='h-full'  href='" . base_url() . "' > Home</li>";
+        $html .= "<li class=' active-nav text-uppercase'  ><a  href='" . base_url() . "' > Home</li>";
       } else {
       }
     } else {
