@@ -165,7 +165,6 @@
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
-    slidesPerView: 3,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
@@ -186,7 +185,7 @@
       },
       992: {
         slidesPerView: 4,
-        spaceBetween: 120
+        spaceBetween: 40
       }
     }
   });

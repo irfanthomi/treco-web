@@ -115,6 +115,16 @@ function keluar() {
                                         <li><a href="<?= base_url('admin\jabatan') ?>">Jabatan</a></li>
                                     </ul>
                                 </li>
+                                <li>
+                                    <a> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                        </i> Product <span class="fa fa-chevron-down"></span>
+                                    </a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="<?= base_url('admin\product') ?>">List product</a></li>
+                                        <li><a href="<?= base_url('admin\product_category') ?>">kategori product</a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li><a><i class="fa fa-edit"></i> Pengaturan <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -123,9 +133,12 @@ function keluar() {
                                         <li><a href="#">Data User</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= base_url('admin/submission') ?>"><i class="fa fa-user"
-                                            aria-hidden="true"></i> Submission <span
-                                            class="label label-success pull-right"> </span></a></li>
+                                <li><a href="<?= base_url('admin/submission') ?>">
+                                        <i class="fa fa-user" aria-hidden="true"></i> Submission <span
+                                            class="label label-success pull-right"> </span>
+                                    </a>
+                                </li>
+
 
                             </ul>
                         </div>

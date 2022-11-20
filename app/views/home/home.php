@@ -55,7 +55,7 @@
                         <i class="bi bi-clipboard-data"></i>
                         <h3><a href="">Berpengalaman</a></h3>
                         <p>Berdiri sejak 19XX, kami telah dipercaya sebagai salah satu distributor besi terlengkap di
-                            Jakarta</p>
+                            Padang</p>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-4 mt-lg-0">

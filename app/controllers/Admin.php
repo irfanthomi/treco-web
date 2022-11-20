@@ -12,11 +12,11 @@ class Admin extends Rtx_controller
     function __construct()
     {
         parent::__construct();
-        // if ($this->session->userdata('masuk') != TRUE) {
-        //     redirect(base_url(''));
-        //     $this->db->close();
-        //     exit();
-        // };
+        if ($this->session->userdata('masuk') != TRUE) {
+            redirect(base_url(''));
+            $this->db->close();
+            exit();
+        };
         $this->load->model('M_admin');
         include APPPATH . 'third_party/password_encp.php';
     }
