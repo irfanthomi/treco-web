@@ -46,9 +46,11 @@
         <div class="container ">
             <div class="row">
                 <div class=" col-md-6">
-                    <div class="logo d-flex ">
-                        <img class="py-2" src="<?= base_url('') ?>rn/home/img/logo.png" alt="">
-                    </div>
+                    <a href="<?= base_url('') ?>">
+                        <div class="logo d-flex ">
+                            <img class="py-2" src="<?= base_url('') ?>rn/home/img/logo.png" alt="">
+                        </div>
+                    </a>
                 </div>
                 <div class=" d-none d-sm-flex col-md-6  contact-info d-flex align-items-center">
                     <div class=" d-flex contact-info-detail justify-content-center  px-3 border-end">
@@ -89,7 +91,7 @@
 
                 <i class=" p-2 bi bi-grid-fill mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
-            <div class="box d-flex">
+            <div class="box d-flex position-relative">
                 <div id="mobile-topbar" class="d-flex">
                     <div class="px-1 social-links  d-flex align-items-center">
                         <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></i></a>
@@ -98,12 +100,14 @@
                     </div>
 
                 </div>
-                <div class="d-flex ps-4">
-                    <div class="container-2">
-                        <span class="icon"><i class="fa fa-search"></i></span>
-                        <input type="search" id="search" placeholder="Search..." />
+                <form action="">
+                    <div class="d-flex search ps-4 ">
+                        <div class="container-2">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <input type="search" id="search" placeholder="Search..." />
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
 
         </div>
