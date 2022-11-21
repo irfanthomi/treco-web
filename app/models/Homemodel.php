@@ -254,4 +254,12 @@ class Homemodel extends CI_model
 		$this->db->limit(3);
 		return $this->db->get();
 	}
+	function product()
+	{
+		$this->db->select('p.*,pc.product_category_name');
+		$this->db->from('product p');
+		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
+
+		return $this->db->get()->result_array();
+	}
 }

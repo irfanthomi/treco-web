@@ -100,11 +100,11 @@
                     </div>
 
                 </div>
-                <form action="">
+                <form action="/cari" method="POST">
                     <div class="d-flex search ps-4 ">
                         <div class="container-2">
                             <span class="icon"><i class="fa fa-search"></i></span>
-                            <input type="search" id="search" placeholder="Search..." />
+                            <input name="search" type="search" id="search" placeholder="Search..." />
                         </div>
                     </div>
                 </form>

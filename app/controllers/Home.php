@@ -425,5 +425,13 @@ class Home extends Rtx_controller
 		$x['judul'] = '';
 		template('contact', $x);
 	}
+	function product()
+	{
+		$x = [
+			'judul' => 'Product',
+			'product' => $this->homemodel->product()
+		];
+		template('product', $x);
+	}
 	/**/
 }
