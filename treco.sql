@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Localhost
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 80028
+ Source Server Version : 80029
  Source Host           : localhost:3306
  Source Schema         : treco
 
  Target Server Type    : MySQL
- Target Server Version : 80028
+ Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 19/11/2022 12:19:34
+ Date: 21/11/2022 11:39:53
 */
 
 SET NAMES utf8mb4;
@@ -286,7 +286,7 @@ CREATE TABLE `menu` (
 BEGIN;
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (178, 0, 'kontak', 'halaman/detail/33/contact', 'Ya', 'Bottom', 7);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (174, 0, 'Profil', '#', 'Ya', 'Bottom', 1);
-INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (188, 0, 'Product', '#', 'Ya', 'Bottom', 5);
+INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (188, 0, 'Product', 'product', 'Ya', 'Bottom', 5);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (193, 0, 'Galery', 'galeri', 'Ya', 'Bottom', 6);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (214, 174, 'Tentang Kami', 'halaman/detail/25/tentang', 'Ya', 'Bottom', 2);
 INSERT INTO `menu` (`id_menu`, `id_parent`, `nama_menu`, `link`, `aktif`, `position`, `urutan`) VALUES (231, 174, 'Visi dan Misi', 'halaman/detail/35/visi--misi', 'Ya', 'Bottom', 3);
@@ -300,11 +300,13 @@ CREATE TABLE `product` (
   `product_id` int NOT NULL AUTO_INCREMENT,
   `product_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `product_category` int NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `product_image` varchar(255) DEFAULT NULL,
   `product_description` varchar(255) DEFAULT NULL,
   `ctreateAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updateAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `createBy` int DEFAULT NULL,
+  `status` varchar(255) NOT NULL,
   PRIMARY KEY (`product_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -312,14 +314,14 @@ CREATE TABLE `product` (
 -- Records of product
 -- ----------------------------
 BEGIN;
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (1, 'Besi Lunak', 1, 'file_1668834563.jpeg', 'kj', '2022-11-18 10:34:01', '2022-11-19 12:09:23', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (2, 'Baja Ringan', 1, 'file_1668834583.png', 'kjnkjn', '2022-11-18 10:34:24', '2022-11-19 12:09:43', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (3, 'Kayu Jati', 2, 'file_1668834599.png', 'klk', '2022-11-18 10:35:07', '2022-11-19 12:09:59', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (4, 'Kayu mahogani', 2, 'product_1668756910.png', 'jhkj', '2022-11-18 14:35:10', '2022-11-19 12:02:46', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (5, 'Besi basian', 1, 'product_1668756981.png', NULL, '2022-11-18 14:36:21', '2022-11-18 14:36:21', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (6, 'rtx', 1, 'product_1668757112.jpeg', NULL, '2022-11-18 14:38:32', '2022-11-18 14:38:32', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (7, 'Kayu mahogani 123', 2, 'product_1668757931.jpg', 'sdqsdqqwewe', '2022-11-18 14:52:11', '2022-11-18 14:52:11', NULL);
-INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`) VALUES (8, 'basi123', 1, 'product_1668758147.jpg', '09807', '2022-11-18 14:55:47', '2022-11-19 12:03:09', NULL);
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (1, 'Reng', 1, 150000.00, 'file_1669005015.png', 'kj', '2022-11-18 10:34:01', '2022-11-21 11:34:59', NULL, 'new');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (2, 'Furing', 1, 25000.00, 'file_1669005459.jpeg', 'kjnkjn', '2022-11-18 10:34:24', '2022-11-21 11:37:50', NULL, 'new');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (3, 'Kayu Jati', 2, 150000.00, 'file_1669005063.png', 'klk', '2022-11-18 10:35:07', '2022-11-21 11:31:03', NULL, 'new');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (4, 'Kayu mahogani', 2, 150000.00, 'file_1669005108.jpeg', 'jhkj', '2022-11-18 14:35:10', '2022-11-21 11:31:48', NULL, 'new');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (5, 'Besi Furing', 1, 50000.00, 'file_1669005132.jpeg', 'test\r\n\r\n', '2022-11-18 14:36:21', '2022-11-21 11:38:23', NULL, 'new');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (6, 'rtx', 1, 50000.00, 'file_1669005169.png', 'k', '2022-11-18 14:38:32', '2022-11-21 11:32:49', NULL, 'sale');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (7, 'Kayu mahogani 123', 2, 50000.00, 'file_1669005181.png', 'sdqsdqqwewe', '2022-11-18 14:52:11', '2022-11-21 11:33:01', NULL, 'sale');
+INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `price`, `product_image`, `product_description`, `ctreateAt`, `updateAt`, `createBy`, `status`) VALUES (8, 'basi123', 1, 150000.00, 'file_1669005193.jpeg', '09807', '2022-11-18 14:55:47', '2022-11-21 11:33:13', NULL, 'sale');
 COMMIT;
 
 -- ----------------------------
