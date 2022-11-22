@@ -54,7 +54,8 @@
                 </div>
                 <div class=" d-none d-sm-flex col-md-6  contact-info d-flex align-items-center">
                     <div class=" d-flex contact-info-detail justify-content-center  px-3 border-end">
-                        <div class="fs-1"><i class="bi bi-telephone d-flex align-items-center ms-4"></i></div>
+                        <div class="fs-2 d-flex align-items-center"><i
+                                class="bi bi-telephone d-flex align-items-center ms-4"></i></div>
                         <div class=" ms-2">
                             <div><b>+1 5589 55488 55</b></div>
                             <div class="text-muted">
@@ -63,7 +64,8 @@
                         </div>
                     </div>
                     <div class=" d-flex contact-info-detail justify-content-center px-3">
-                        <div class="fs-1"><i class="bi bi-whatsapp d-flex align-items-center"></i></div>
+                        <div class="fs-2 d-flex align-items-center"><i
+                                class="bi bi-whatsapp d-flex align-items-center"></i></div>
                         <div class=" ms-2">
                             <div>
                                 <b>contact@example.com

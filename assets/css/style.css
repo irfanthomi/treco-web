@@ -514,8 +514,8 @@ h6 {
 
 #mobile-topbar {
   /* background: #ffffff; */
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 5px 0;
+  font-size: 22px;
   /* height: 123px; */
 }
 
@@ -2654,6 +2654,10 @@ section {
   overflow: hidden;
   position: relative;
   border-radius: 0
+}
+
+.container .product-item:hover {
+  box-shadow: 0px 15px 22px #ebebeb
 }
 
 .container .product-item .product {
