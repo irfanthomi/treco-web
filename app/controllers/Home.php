@@ -34,6 +34,8 @@ class Home extends Rtx_controller
 		$x['team']   = $this->homemodel->team_list();
 		$x['judul']    = strip_tags(cari('Nama'));
 		$x['setting']    = $this->M_admin->setting();
+		$x['product_category_first'] = $this->homemodel->product_category_first();
+		$x['product_category_second'] = $this->homemodel->product_category_second();
 		$this->template->load('template', 'home/home', $x);
 	}
 

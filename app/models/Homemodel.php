@@ -151,6 +151,7 @@ class Homemodel extends CI_model
 		$this->db->limit(8);
 		return $this->db->get();
 	}
+
 	function lates_info()
 	{
 		$this->db->select("*");
@@ -254,12 +255,28 @@ class Homemodel extends CI_model
 		$this->db->limit(3);
 		return $this->db->get();
 	}
+	function product_category_first()
+	{
+		$this->db->select('pc.*');
+		$this->db->from('product_category pc');
+		$this->db->order_by('pc.product_category_id', 'desc');
+		$this->db->limit(1);
+
+		return $this->db->get()->result_array();
+	}
+	function product_category_second()
+	{
+		$this->db->select('pc.*');
+		$this->db->from('product_category pc');
+		$this->db->order_by('pc.product_category_id', 'desc');
+		$this->db->limit(4);
+		return $this->db->get()->result_array();
+	}
 	function product()
 	{
 		$this->db->select('p.*,pc.product_category_name');
 		$this->db->from('product p');
 		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
-
 		return $this->db->get()->result_array();
 	}
 }

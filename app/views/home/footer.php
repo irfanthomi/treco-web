@@ -90,7 +90,6 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
-Vendor JS Files
 <script src="<?= base_url('') ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="<?= base_url('') ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url('') ?>assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -112,5 +111,20 @@ $(function() {
             $('#search').removeClass('btn-search')
         }, 500)
     });
+});
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<script>
+new Swiper('.clients-slider2', {
+    direction: 'vertical',
+    slidesPerView: 3,
+    paginationClickable: true,
+    loop: true,
+    autoplay: 3000,
+    height: 600,
+    autoplayDisableOnInteraction: false
 });
 </script>

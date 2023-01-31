@@ -1,3 +1,15 @@
+<style>
+.home-galery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-galery \  {
+    height: 100%;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <section id="hero">
     <div class="hero-container">
         <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -75,11 +87,12 @@
     <section id="about" class="about">
         <div class="container">
 
-            <div class="row">
-                <div class="col-lg-6 d-flex align-items-center">
+            <div class="row ">
+                <div data-aos="fade-right" class="col-lg-6 d-flex align-items-center">
                     <img src="<?= base_url('rn/home/img/') ?><?= $setting->logo ?>" class=" logo-home img-fluid" alt="">
                 </div>
-                <div class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
+                <div data-aos="zoom-in" data-aos-delay="200"
+                    class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
                     <div>
                         <h3><?= $setting->Nama ?></h3>
 
@@ -95,131 +108,121 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Product</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <div class="section-title">
+            <h2>Product</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+                Sit
+                sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+                Quia
+                fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+        <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
+            <div class=" p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffbf ">
+                <div class="container-fuild">
+
+                    <div class="row" style="height: 600px;">
+                        <div data-aos="fade-right" data-aos-duration="1000" class="col-md-6 p-0 home-galery">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_w_r-11dJ44DevjeL8aprs1C1my0ecUPCQ&usqp=CAU"
+                                alt="">
+                        </div>
+                        <div data-aos="fade-left" data-aos-duration="1000" class="col-md-6  home-galery ">
+                            <div class="row h-100">
+
+                                <?php
+                                foreach ($product_category_second as $pks) : ?>
+                                <div id=" portfolio " class="position-relative portfolio col-md-6 p-0  h-50">
+                                    <h4 class=" position-absolute">fsfvsdf</h4>
+                                    <div class="portfolio-wrap h-100">
+                                        <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
+                                            alt="">
+                                        <div class=" portfolio-info">
+                                            <!-- <h4><a href="" class="text-white"><?= $pks['product_category_name'] ?></a> -->
+                                            </h4>
+                                            <hr>
+                                            <h3><a href="" class=" text-white">Lihat Produk</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <?php endforeach; ?>
+
+                            </div>
+                        </div>
+                        <!-- <div class="clients-slider2 swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div>
+                                    <div class="swiper-slide col-md-12">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <div class="swiper-slide col-md-12">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div> -->
+                    </div>
+
+
+                </div>
+                <div class="text-center pt-3">
+                    <a href="">
+                        <button class="btn-basic ">
+                            Lainnnya
+                        </button>
+                    </a>
+
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4><a href="">Lorem Ipsum</a></h4>
-                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Sed ut perspiciatis</a></h4>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Magni Dolores</a></h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4><a href="">Nemo Enim</a></h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Dele cardo</a></h4>
-                        <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-arch"></i></div>
-                        <h4><a href="">Divera don</a></h4>
-                        <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="text-center pt-3">
-                <a href="">
-                    <button class="btn-basic ">
-                        Lainnnya
-                    </button>
-                </a>
-
-            </div>
-            <hr>
         </div>
     </section><!-- End Services Section -->
     <!-- Product -->
+
+
 
     <section id="clients" class="clients">
         <div class="container">
             <div class="section-title">
                 <h2>Blogs</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
             <div class="clients-slider swiper">
                 <div class="swiper-wrapper">
+
+                    <?php
+                    foreach ($latest->result_array() as $lt) : ?>
                     <div class="swiper-slide">
-                        <div id="featured" class="featured">
-                            <div class="icon-box">
-                                <i class="bi bi-gem"></i>
-                                <h3><a href="">Berkualitas</a></h3>
+                        <div id="featured" class="featured ">
+                            <div class="icon-box w-100">
+                                <div class=" w-100">
+                                    <img width="100%" src="<?= base_url('rn/gambar/' . $lt['gambar']) ?>">
+                                </div>
+                                <div><b><a class="text-black" href=""><?= $lt['judul'] ?></b></a>
+                                </div>
                                 <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div id="featured" class="featured">
-                            <div class="icon-box">
-                                <i class="bi bi-gem"></i>
-                                <h3><a href="">Berkualitas</a></h3>
-                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div id="featured" class="featured">
-                            <div class="icon-box">
-                                <i class="bi bi-gem"></i>
-                                <h3><a href="">Berkualitas</a></h3>
-                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div id="featured" class="featured">
-                            <div class="icon-box">
-                                <i class="bi bi-gem"></i>
-                                <h3><a href="">Berkualitas</a></h3>
-                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div id="featured" class="featured">
-                            <div class="icon-box">
-                                <i class="bi bi-gem"></i>
-                                <h3><a href="">Berkualitas</a></h3>
-                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php endforeach; ?>
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
