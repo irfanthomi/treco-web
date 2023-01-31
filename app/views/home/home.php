@@ -118,7 +118,7 @@
                 fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
-            <div class=" p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffbf ">
+            <div class=" p-x-3" style="padding: 67px 0px 27px 0px; background:#7706063b ">
                 <div class="container-fuild">
 
                     <div class="row" style="height: 600px;">
@@ -132,7 +132,12 @@
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
                                 <div id=" portfolio " class="position-relative portfolio col-md-6 p-0  h-50">
-                                    <h4 class=" position-absolute">fsfvsdf</h4>
+                                    <div style=" z-index:2; bottom:0;    background: #ffffffc4; "
+                                        class=" w-100 text-black  position-absolute">
+                                        <div class=" w-100 ">
+                                            <h4>fsfvsdf</h4>
+                                        </div>
+                                    </div>
                                     <div class="portfolio-wrap h-100">
                                         <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
                                             alt="">
