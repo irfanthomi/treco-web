@@ -435,5 +435,12 @@ class Home extends Rtx_controller
 		];
 		template('product', $x);
 	}
+	function kalkulator()
+	{
+		$x = [
+			'judul' => 'Kalkulator',
+		];
+		template('kalkulator', $x);
+	}
 	/**/
 }

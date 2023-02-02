@@ -18,6 +18,7 @@ $route['video/(:any)']             = 'home/video/$1';
 $route['download']                 = 'home/download';
 $route['product']                 = 'home/product';
 $route['cari']                     = 'home/cari';
+$route['kalkulator']                     = 'home/kalkulator';
 $route['contact.html']             = 'home/contact';
 $route['blog-dosen.html']          = 'home/blog_dosen';
 $route['sertifikat-akreditasi']    = 'home/sertifikat_akreditasi';

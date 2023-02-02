@@ -97,8 +97,20 @@
 <script src="<?= base_url('') ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="<?= base_url('') ?>assets/vendor/waypoints/noframework.waypoints.js"></script>
 <script src="<?= base_url('') ?>assets/vendor/php-email-form/validate.js"></script>
+
+
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+
+
 <!-- Template Main JS File -->
 <script src="<?= base_url('') ?>/assets/js/main.js"></script>
 <script>

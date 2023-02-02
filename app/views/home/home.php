@@ -118,7 +118,7 @@
                 fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
-            <div class=" p-x-3" style="padding: 67px 0px 27px 0px; background:#7706063b ">
+            <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#7706063b ">
                 <div class="container-fuild">
 
                     <div class="row" style="height: 600px;">
@@ -237,6 +237,11 @@
         </div>
     </section><!-- End Product Section -->
 
+    <!-- Tabs content -->
 
+
+
+
+    <!-- Tabs content -->
 
 </main><!-- End #main -->
