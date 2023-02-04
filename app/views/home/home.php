@@ -1,55 +1,41 @@
-<style>
-.home-galery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+<main id="main">
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-.home-galery \  {
-    height: 100%;
-}
-</style>
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<section id="hero">
-    <div class="hero-container">
-        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+                <div class="carousel-inner" role="listbox">
 
-            <div class="carousel-inner" role="listbox">
-
-                <!-- Slide 1 -->
-                <?php $no = 1;
-                foreach ($slide->result_array() as $slid) : $active = $no++ == 1 ? "active" : ""; ?>
-                <!-- Slide <?= $no++ ?> -->
-                <div class="carousel-item <?= $active ?> "
-                    style=" background-image: url(<?= base_url('rn/slider/' . $slid['gambar']) ?>">
-                    <!-- <div class="carousel-container">
+                    <!-- Slide 1 -->
+                    <?php $no = 1;
+                    foreach ($slide->result_array() as $slid) : $active = $no++ == 1 ? "active" : ""; ?>
+                    <!-- Slide <?= $no++ ?> -->
+                    <div class="carousel-item <?= $active ?> "
+                        style=" background-image: url(<?= base_url('rn/slider/' . $slid['gambar']) ?>">
+                        <!-- <div class="carousel-container">
                         <div class="carousel-content animate__fadeIn ">
                             <h2 class="animate__animated animate__fadeInDown"><?= $slid['judul'] ?> <span>IDM</span>
                             </h2>
                             <p class="animate__animated animate__fadeInUp"><?= $slid['isi'] ?></p>
                         </div>
                     </div> -->
+                    </div>
+                    <?php endforeach; ?>
+
                 </div>
-                <?php endforeach; ?>
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
 
             </div>
-
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
-
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
-
         </div>
-    </div>
-</section><!-- End Hero -->
-
-<main id="main">
-
+    </section><!-- End Hero -->
     <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
         <div class="container">

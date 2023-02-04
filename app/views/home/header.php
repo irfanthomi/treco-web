@@ -32,6 +32,18 @@
     <link href="<?= base_url() ?>assets/css/sweetAlert6.css" rel="stylesheet">
     <script src=" <?= base_url('assets') ?>/js/sweetAlert6.js"></script>
 
+    <style>
+    .home-galery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .home-galery \  {
+        height: 100%;
+    }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- =======================================================
   * Template Name: Eterna - v4.9.1
   * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
