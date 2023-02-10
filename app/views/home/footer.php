@@ -46,20 +46,18 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                    <div>
+                        <?= $setting->alamat ?>
+                    </div>
+                    <strong>Phone:</strong> <?= $setting->telepone ?><br>
+                    <strong>Email:</strong> <?= $setting->email ?><br>
                     </p>
 
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-info">
-                    <h3>About Eterna</h3>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
-                        valies
-                        darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                    <h3>Tentang <?= $setting->Nama ?></h3>
+                    <p> <?= $setting->tentang_universitas ?></p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

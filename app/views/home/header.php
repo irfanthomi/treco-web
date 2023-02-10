@@ -71,7 +71,7 @@
                         <div class="fs-2 d-flex align-items-center"><i
                                 class="bi bi-telephone d-flex align-items-center ms-4"></i></div>
                         <div class=" ms-2">
-                            <div><b>+1 5589 55488 55</b></div>
+                            <div><b><?= $setting->telepone ?></b></div>
                             <div class="text-muted">
                                 <small>Call Center</small>
                             </div>
@@ -82,8 +82,7 @@
                                 class="bi bi-whatsapp d-flex align-items-center"></i></div>
                         <div class=" ms-2">
                             <div>
-                                <b>contact@example.com
-                                </b>
+                                <b><?= $setting->email ?> </b>
                             </div>
                             <div class="text-muted">
                                 <small>WhatsApp</small>

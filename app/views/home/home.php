@@ -1,4 +1,5 @@
 <main id="main">
+    <?= var_dump($setting) ?>
     <section id="hero">
         <div class="hero-container">
             <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -104,7 +105,7 @@
                 fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
-            <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#7706063b ">
+            <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
                 <div class="container-fuild">
 
                     <div class="row" style="height: 600px;">
