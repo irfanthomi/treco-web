@@ -180,9 +180,9 @@ foreach ($halaman->result() as $halModal) : ?>
                             <label class="col-form-label col-md-2  label-align" for="first-name">Isi <span
                                     class="required">*</span>
                             </label>
-                            <div class="col-md-10 "><textarea class="form-control "
-                                    id="editorEdit<?= $halModal->id_halaman; ?>" rows="20" cols="80"
-                                    name="isi"><?= $halModal->isi; ?></textarea>
+                            <div class="col-md-10 ">
+                                <textarea class="form-control editorAdd " id="editorEdit<?= $halModal->id_halaman; ?>"
+                                    rows="20" cols="80" name="isi"><?= $halModal->isi; ?></textarea>
                             </div>
                         </div>
                         <div class="item row align-items-center form-group">
@@ -207,13 +207,25 @@ foreach ($halaman->result() as $halModal) : ?>
     </div>
 </div>
 <script>
-CKEDITOR.replace('editorEdit' + <?= $halModal->id_halaman; ?>);
+CKEDITOR.config.allowedContent = true;
+CKEDITOR.replace('editorEdit' + <?= $halModal->id_halaman; ?>, {
+
+    filebrowserImageBrowseUrl: '<?php echo base_url('assets/filemanager/index.html'); ?>',
+    filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile?type=images',
+    filebrowserUploadMethod: 'form',
+    exportPdf_tokenUrl: 'hkjhknkjknkjnkj',
+    height: '35em',
+    resize_minWidth: 200,
+    resize_minHeight: 300,
+    resize_maxWidth: 2800,
+})
 </script>
+
 <?php endforeach; ?>
 <!-- /modals -->
-<script>
+<!-- <script>
 CKEDITOR.replace('editorAdd', {
     filebrowserBrowseUrl: '/browser/browse.php',
     filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile'
 });
-</script>
+</script> -->

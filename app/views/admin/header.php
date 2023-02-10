@@ -32,8 +32,11 @@
 
     <!-- Custom Theme Style -->
     <link href="<?= base_url('assets/admin/') ?>css/custom.css" rel="stylesheet">
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script> -->
     <script src="<?= base_url('assets') ?>/ckeditor/ckeditor.js"></script>
 </head>
+
+
 <script type="text/javascript">
 function keluar() {
     swal({

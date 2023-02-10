@@ -1680,7 +1680,8 @@ class Admin extends Rtx_controller
     }
     function uploadFile()
     {
-        $_FILES['rtx']['name'];
+        $file = $_FILES['upload']['name'];
+        $file_ext = pathinfo($file, PATHINFO_EXTENSION);
         $nmfile = "file_" . time();
         $config['upload_path'] = './rn/upload/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
@@ -1689,12 +1690,12 @@ class Admin extends Rtx_controller
         $config['file_name'] = $nmfile;
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        if ($this->upload->do_upload('rtx')) {
-            var_dump('rtx');
-            die;
+        $url = base_url() . 'rn/upload/' . $nmfile . '.' . $file_ext;
+        if ($this->upload->do_upload('upload')) {
+            $jsondata = array('uploaded' => 1, 'fileName' => $nmfile, 'url' => $url);
+            echo json_encode($jsondata);
         } else {
-            var_dump('sdfdfddfgsuskesd');
-            die;
+            var_dump('gagal');
         }
     }
 

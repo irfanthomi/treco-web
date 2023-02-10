@@ -1,5 +1,4 @@
 <main id="main">
-    <?= var_dump($setting) ?>
     <section id="hero">
         <div class="hero-container">
             <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -81,10 +80,9 @@
                 <div data-aos="zoom-in" data-aos-delay="200"
                     class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
                     <div>
-                        <h3><?= $setting->Nama ?></h3>
-
+                        <><?= $setting->Nama ?></ h3>
                         <p>
-                            <?= $setting->tentang_universitas ?>
+                            <?= $setting->deskripsi ?>
                         </p>
                     </div>
                 </div>
@@ -206,9 +204,9 @@
                                 <div class=" w-100">
                                     <img width="100%" src="<?= base_url('rn/gambar/' . $lt['gambar']) ?>">
                                 </div>
-                                <div><b><a class="text-black" href=""><?= $lt['judul'] ?></b></a>
+                                <div class=" mt-2"><a class="text-black"
+                                        href="<?= detail_informasi($lt['id_artikel'], $lt['judul']) ?>"><?= $lt['judul'] ?></a>
                                 </div>
-                                <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
                             </div>
                         </div>
                     </div>
