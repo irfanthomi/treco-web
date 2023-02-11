@@ -429,18 +429,19 @@ class Home extends Rtx_controller
 	}
 	function product()
 	{
+		// die;
 		$x = [
 			'judul' => 'Product',
 			'product' => $this->homemodel->product()
 		];
-		template('product', $x);
+		$this->template->load('template', 'home/product', $x);
 	}
 	function kalkulator()
 	{
 		$x = [
 			'judul' => 'Kalkulator',
 		];
-		template('kalkulator', $x);
+		$this->template->load('template', 'home/kalkulator', $x);
 	}
 	/**/
 }

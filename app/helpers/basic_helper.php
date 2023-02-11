@@ -12,8 +12,8 @@ function admin_template($konten, $array)
 function not_found($tabel, $kolom, $value)
 {
 
-// $value_real=stripslashes(strip_tags(htmlspecialchars($value,ENT_QUOTES)));
- 
+  // $value_real=stripslashes(strip_tags(htmlspecialchars($value,ENT_QUOTES)));
+
   $CI = &get_instance();
   $q = $CI->db->limit(1)->get_where($tabel, [$kolom => $value])->row_array();
   if (!$q) {

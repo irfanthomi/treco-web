@@ -2,4 +2,4 @@
 <!-- Hero Section-->
 <?= $contents ?>
 
-<?php  include 'home/footer.php'; ?>
+<?php include 'home/footer.php'; ?>

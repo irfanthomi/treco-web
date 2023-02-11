@@ -190,6 +190,24 @@
     }
   });
 
+  new Swiper('.product-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    slidesPerView: 1,
+    spaceBetween: 10
+
+  });
+
   /**
    * Skills animation
    */

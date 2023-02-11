@@ -1705,43 +1705,81 @@ class Admin extends Rtx_controller
     // product
     public function product()
     {
-
         if (isset($_POST['add'])) {
-            // var_dump($_POST);
-            // die;
-            $nmfile = "product_" . time(); //nama file saya beri nama langsung dan diikuti fungsi time
-            $config['upload_path'] = './rn/product/image/'; //path folder
-            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-            $config['max_size'] = '4048'; //maksimum besar file 2M
-            $config['file_name'] = $nmfile; //nama yang terupload nantinya
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);
-            if ($_FILES['product_image']['name']) {
-                if ($this->upload->do_upload('product_image')) {
-                    $gbr = $this->upload->data();
-                    $gambar = $gbr['file_name'];
-                    $product_name = $this->input->post('product_name');
-                    $product_category = $this->input->post('product_category');
-                    $product_description = $this->input->post('product_description');
-                    $createBy = $this->session->userdata('id_user');
-                    $dataProduct = array(
-                        'product_name' => $product_name,
-                        'product_category' => $product_category,
-                        'product_description' => $product_description,
-                        'product_image' => $gambar,
-                        'createBy' => $createBy,
-                    );
-                    $this->M_admin->insertdata('product', $dataProduct);
-                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
-                    redirect(base_url('admin/product'));
-                } else {
-                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</div>'));
-                    redirect(base_url('admin/product'));
+            $count = count($_FILES['files']['name']);
+            $data = [];
+            $product_data = [
+                'product_name' => $this->input->post('product_name'),
+                'product_category' => $this->input->post('product_category'),
+                'product_description' => $this->input->post('product_description'),
+                'createBy' => $this->session->userdata('id_user')
+            ];
+
+            // insert data product
+            $product_id =  $this->M_admin->addProduct('product', $product_data);
+
+            for ($i = 0; $i < $count; $i++) {
+                if (!empty($_FILES['files']['name'][$i])) {
+                    $_FILES['file']['name'] = $_FILES['files']['name'][$i];
+                    $_FILES['file']['type'] = $_FILES['files']['type'][$i];
+                    $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+                    $_FILES['file']['error'] = $_FILES['files']['error'][$i];
+                    $_FILES['file']['size'] = $_FILES['files']['size'][$i];
+                    $config['upload_path'] = './rn/product/image/'; //path folder
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+                    $config['max_size'] = '5000'; // max_size in kb
+                    $config['file_name'] = $_FILES['files']['name'][$i];
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if ($this->upload->do_upload('file')) {
+                        $uploadData = $this->upload->data();
+                        $filename = $uploadData['file_name'];
+                        $data['totalFiles'][] = $filename;
+
+
+                        // insert image product
+                        $this->M_admin->add_product_image($product_id, $filename);
+                    } else {
+                        echo $this->upload->display_errors();
+                    }
                 }
-            } else {
-                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Gambar Tidak ADA</span>');
-                redirect(base_url('admin/product'));
             }
+            $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
+            redirect(base_url('admin/product'));
+
+            // $nmfile = "product_" . time(); //nama file saya beri nama langsung dan diikuti fungsi time
+            // $config['upload_path'] = './rn/product/image/'; //path folder
+            // $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+            // $config['max_size'] = '4048'; //maksimum besar file 2M
+            // $config['file_name'] = $nmfile; //nama yang terupload nantinya
+            // $this->load->library('upload', $config);
+            // $this->upload->initialize($config);
+            // if ($_FILES['product_image']['name']) {
+            //     if ($this->upload->do_upload('product_image')) {
+            //         $gbr = $this->upload->data();
+            //         $gambar = $gbr['file_name'];
+            //         $product_name = $this->input->post('product_name');
+            //         $product_category = $this->input->post('product_category');
+            //         $product_description = $this->input->post('product_description');
+            //         $createBy = $this->session->userdata('id_user');
+            //         $dataProduct = array(
+            //             'product_name' => $product_name,
+            //             'product_category' => $product_category,
+            //             'product_description' => $product_description,
+            //             'product_image' => $gambar,
+            //             'createBy' => $createBy,
+            //         );
+            //         $this->M_admin->insertdata('product', $dataProduct);
+            //         $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
+            //         redirect(base_url('admin/product'));
+            //     } else {
+            //         $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</div>'));
+            //         redirect(base_url('admin/product'));
+            //     }
+            // } else {
+            //     $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Gambar Tidak ADA</span>');
+            //     redirect(base_url('admin/product'));
+            // }
         } else {
             $data = [
                 'judul' => "List Product",
@@ -1761,10 +1799,12 @@ class Admin extends Rtx_controller
             redirect(base_url('admin/product'));
         }
         $product = $this->M_admin->productEdit($id);
+        $product_images =  $this->M_admin->productImage($id);
         $x = [
             'judul' => "Edit Product",
             'aksi' => "edit",
             'product' => $product,
+            'product_images' => $product_images,
             'product_category' => $this->db->get('product_category')->result_array()
         ];
         if (isset($_POST['edit'])) {

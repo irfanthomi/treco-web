@@ -30,6 +30,25 @@ class M_admin extends CI_model
 
     return $this->db->get()->result_array();
   }
+
+  function addProduct($tabel = '', $data = '')
+  {
+
+    $this->db->insert($tabel, $data);
+    return $this->db->insert_id();
+  }
+
+  function add_product_image($product_id, $image_name)
+  {
+    $image_data = array(
+      'product_id' => $product_id,
+      'image_name' => $image_name
+    );
+    $this->db->insert('product_images', $image_data);
+  }
+
+
+
   function productEdit($id)
   {
     $this->db->select('p.*,pc.product_category_name');
@@ -37,7 +56,15 @@ class M_admin extends CI_model
     $this->db->where('product_id', $id);
 
     $this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
+
     return $this->db->get()->row_array();
+  }
+  function productImage($id)
+  {
+    $this->db->select('p.*');
+    $this->db->from('product_images p');
+    $this->db->where('product_id', $id);
+    return $this->db->get()->result_array();
   }
 
 
@@ -116,6 +143,9 @@ class M_admin extends CI_model
 
     return $this->db->insert($tabel, $data);
   }
+
+
+
 
 
   function updatedata($tabel = '', $data = '', $where = '')

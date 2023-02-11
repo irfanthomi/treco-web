@@ -51,8 +51,8 @@
                                         <option selected value="<?= $product['product_category'] ?>">
                                             <?= $product['product_category_name'] ?></option>
                                         <?php $no = 1;
-                    foreach ($product_category as $pc) :
-                    ?>
+                                        foreach ($product_category as $pc) :
+                                        ?>
                                         <option value="<?= $pc['product_category_id'] ?>">
                                             <?= $pc['product_category_name'] ?></option>
 
@@ -75,18 +75,23 @@
                                     Image
                                     <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 d-flex justify-content-around">
-                                    <input name="product_image" type="file" id="formFile">
-                                    <img src="<?php
-                            $ada = file_exists("rn/product/image/" . $product['product_image']);
-                            if ($ada) :
-                              echo base_url("rn/product/image/" . $product['product_image']);
-                            elseif (!$ada) :
-                              echo base_url("rn/admin/dist/img/no-image.jpg");
-                            endif;
+                                <div class="col-md-6 col-sm-6">
+                                    <div>
+                                        <input name="product_image" type="file" id="formFile">
+                                    </div>
+                                    <div class="row mt-3">
+                                        <?php foreach ($product_images as $pi) : ?>
+                                        <div class=" col-md-6 p-2">
 
-                            ?>" class="avatarsdc" width="60%" alt="Avatar">
+                                            <img src="<?= base_url("rn/product/image/" . $pi['image_name']) ?>"
+                                                class="shadow p-2 " width="223" alt="Avatar">
+                                        </div>
+
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
+
+
                             </div>
                             <div class=" item form-group ">
                                 <div class="col-md-12 text-right p-2">

@@ -274,9 +274,12 @@ class Homemodel extends CI_model
 	}
 	function product()
 	{
-		$this->db->select('p.*,pc.product_category_name');
+		$this->db->select('p.*,pc.product_category_name,GROUP_CONCAT(pi.image_name SEPARATOR ",") as images');
 		$this->db->from('product p');
 		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
-		return $this->db->get()->result_array();
+		$this->db->join('product_images pi', 'pi.product_id = p.product_id', 'left');
+		$this->db->group_by('p.product_id');
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 }
