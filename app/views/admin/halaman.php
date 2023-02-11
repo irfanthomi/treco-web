@@ -212,7 +212,6 @@ CKEDITOR.replace('editorEdit' + <?= $halModal->id_halaman; ?>, {
 
     filebrowserImageBrowseUrl: '<?php echo base_url('assets/filemanager/index.html'); ?>',
     filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile?type=images',
-    filebrowserUploadMethod: 'form',
     exportPdf_tokenUrl: 'hkjhknkjknkjnkj',
     height: '35em',
     resize_minWidth: 200,
