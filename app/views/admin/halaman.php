@@ -222,10 +222,3 @@ CKEDITOR.replace('editorEdit' + <?= $halModal->id_halaman; ?>, {
 </script>
 
 <?php endforeach; ?>
-<!-- /modals -->
-<!-- <script>
-CKEDITOR.replace('editorAdd', {
-    filebrowserBrowseUrl: '/browser/browse.php',
-    filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile'
-});
-</script> -->

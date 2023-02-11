@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>IDM (Ikatan Dosen Menulis) | </title>
+    <title>TRECO | </title>
     <link src="<?= base_url('assets/vendor') ?>/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
     <!-- Bootstrap -->
@@ -71,7 +71,7 @@ function keluar() {
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="<?= base_url('admin') ?>" class="site_title">
-                            <h1>IDM</h1>
+                            <h4>TRECO</h4>
                         </a>
                     </div>
                     <div class="clearfix"></div>

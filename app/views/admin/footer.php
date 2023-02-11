@@ -1,7 +1,7 @@
 <!-- footer content -->
 <footer>
     <div class="pull-right">
-        Ikatan Dosen Menulis - IDM
+        TRECO
     </div>
     <div class="clearfix"></div>
 </footer>
