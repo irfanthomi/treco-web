@@ -1690,7 +1690,7 @@ class Admin extends Rtx_controller
         $config['file_name'] = $nmfile;
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        $url = base_url() . 'rn/upload/' . $nmfile . '.' . $file_ext;
+        $url = "" . base_url() . "rn/upload/" . $nmfile . "." . $file_ext . "";
         if ($this->upload->do_upload('upload')) {
             $jsondata = array('uploaded' => 1, 'fileName' => $nmfile, 'url' => $url);
             echo json_encode($jsondata);
