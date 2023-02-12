@@ -216,12 +216,8 @@
     <section id="services" class="services">
         <div class="section-title">
             <h2>Product</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
-                Sit
-                sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                Quia
-                fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.
+            </p>
         </div>
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
             <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
