@@ -19,6 +19,7 @@ $route['download']                 = 'home/download';
 $route['product']                  = 'home/product';
 $route['cari']                     = 'home/cari';
 $route['kalkulator']               = 'home/kalkulator';
+$route['project']               = 'home/project';
 // $route['remove-image(:any)/(:any)'] = 'admin/productImageDelete/$1/$2';
 $route['contact.html']             = 'home/contact';
 $route['blog-dosen.html']          = 'home/blog_dosen';

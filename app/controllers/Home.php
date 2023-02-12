@@ -444,4 +444,12 @@ class Home extends Rtx_controller
 		$this->template->load('template', 'home/kalkulator', $x);
 	}
 	/**/
+	function project()
+	{
+		$x = [
+			'judul' => 'Our project',
+		];
+		$this->template->load('template', 'home/project', $x);
+	}
+	/**/
 }
