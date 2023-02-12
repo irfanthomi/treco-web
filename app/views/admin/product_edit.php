@@ -1,3 +1,23 @@
+<style>
+.btn-remove {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4747476e;
+    /* filter: drop-shadow(1px 1px 2px gray); */
+    color: white;
+    top: 4px;
+    left: 4px;
+    border: none;
+}
+
+.btn-remove:hover {
+    background: #5f5f5f;
+
+}
+</style>
 <div class="right_col" role="main" style="min-height: 1288px;">
     <div class="">
         <div class="page-title">
@@ -77,14 +97,22 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6">
                                     <div>
-                                        <input name="product_image" type="file" id="formFile">
+                                        <input type='file' name='files[]' multiple="">
                                     </div>
                                     <div class="row mt-3">
                                         <?php foreach ($product_images as $pi) : ?>
                                         <div class=" col-md-6 p-2">
-
-                                            <img src="<?= base_url("rn/product/image/" . $pi['image_name']) ?>"
-                                                class="shadow p-2 " width="223" alt="Avatar">
+                                            <div class="position-relative">
+                                                <a
+                                                    href="<?= base_url('admin/productImageDelete/' . $pi['id'] . '/' . $product['product_id']); ?>">
+                                                    <div
+                                                        class=" btn-remove border-none rounded-circle  position-absolute">
+                                                        x
+                                                    </div>
+                                                </a>
+                                                <img src="<?= base_url("rn/product/image/" . $pi['image_name']) ?>"
+                                                    class="shadow p-2 " width="223" alt="Avatar">
+                                            </div>
                                         </div>
 
                                         <?php endforeach; ?>

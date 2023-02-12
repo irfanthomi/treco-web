@@ -41,29 +41,150 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-4">
+
+
+                <div class="benefit-slider h-100 swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">PRODUK
+                                        </a></h3>
+                                    <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">DISTRIBUTOR</a></h3>
+                                    <p>3 TITIK DISTRIBUTOR yang ada (Solok, Sijunjung, dan Padang Pariaman) </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">QUALITY CONTROL
+
+                                        </a></h3>
+                                    <p>Mengendalikan quality dengan INSPEKSI, sehingga menghasilkan produk yang OPTIMAL
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">PRODUK
+
+                                        </a></h3>
+                                    <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.
+
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">APPLICATOR
+                                        </a></h3>
+                                    <p>Para APPLICATOR mitra TRECO diberikan PELATIHAN dan sertifikasi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-cash-coin"></i>
+                                    <h3><a href="">DISTRIBUTOR
+
+                                        </a></h3>
+                                    <p>3 TITIK DISTRIBUTOR yang ada
+                                        (Solok, Sijunjung, dan Padang Pariaman)
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 
+                    <div class="col-lg-4 mt-4">
                     <div class="icon-box">
                         <i class="bi bi-gem"></i>
-                        <h3><a href="">Berkualitas</a></h3>
-                        <p>Dapatkan besi konstruksi berkualitas dari distributor besi padang ternama</p>
+                        <h3><a href="">BAHAN BAKU
+                            </a></h3>
+                        <p>Terbuat dari material galvalum yang berkualitas
+                            SNI 4096.2007
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="col-lg-4 mt-4">
                     <div class="icon-box">
                         <i class="bi bi-clipboard-data"></i>
-                        <h3><a href="">Berpengalaman</a></h3>
-                        <p>Berdiri sejak 19XX, kami telah dipercaya sebagai salah satu distributor besi terlengkap di
-                            Padang</p>
+                        <h3><a href="">SOFTWARE</a></h3>
+                        <p>Analisis dalam pengaplikasian TRECO didukung dan dikunci dengan SOFTWARE Treco Truss System
+                            Quik Series</p>
                     </div>
                 </div>
-                <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="col-lg-4 mt-4">
                     <div class="icon-box">
                         <i class="bi bi-cash-coin"></i>
-                        <h3><a href="">Harga Bersaing</a></h3>
-                        <p>Kami memiliki visi untuk selalu berusaha untuk menyediakan besi berkualitas dengan tepat
-                            waktu dan harga besi yang tersaing</p>
+                        <h3><a href="">APPLICATOR
+                            </a></h3>
+                        <p>Para APPLICATOR mitra TRECO diberikan PELATIHAN dan sertifikasi
+                        </p>
                     </div>
                 </div>
+                <div class="col-lg-4 mt-4">
+                    <div class="icon-box">
+                        <i class="bi bi-cash-coin"></i>
+                        <h3><a href="">QUALITY CONTROL
+
+                            </a></h3>
+                        <p>Mengendalikan quality dengan INSPEKSI, sehingga menghasilkan produk yang OPTIMAL
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                    <div class="icon-box">
+                        <i class="bi bi-cash-coin"></i>
+                        <h3><a href="">PRODUK
+
+                            </a></h3>
+                        <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.
+
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4">
+                    <div class="icon-box">
+                        <i class="bi bi-cash-coin"></i>
+                        <h3><a href="">DISTRIBUTOR
+
+                            </a></h3>
+                        <p>3 TITIK DISTRIBUTOR yang ada
+                            (Solok, Sijunjung, dan Padang Pariaman)
+
+                        </p>
+                    </div>
+                </div> -->
             </div>
 
         </div>
@@ -107,25 +228,25 @@
                 <div class="container-fuild">
 
                     <div class="row" style="height: 600px;">
-                        <div data-aos="fade-right" data-aos-duration="1000" class="col-md-6 p-0 home-galery">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_w_r-11dJ44DevjeL8aprs1C1my0ecUPCQ&usqp=CAU"
-                                alt="">
+                        <div data-aos="fade-right" data-aos-duration="1000"
+                            class="shadow border col-md-6 p-0 home-galery">
+                            <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="" alt="">
                         </div>
                         <div data-aos="fade-left" data-aos-duration="1000" class="col-md-6  home-galery ">
                             <div class="row h-100">
 
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
-                                <div id=" portfolio " class="position-relative portfolio col-md-6 p-0  h-50">
-                                    <div style=" z-index:2; bottom:0;    background: #ffffffc4; "
+                                <div id=" portfolio "
+                                    class=" border shadow position-relative portfolio col-md-6 p-0  h-50">
+                                    <!-- <div style=" z-index:2; bottom:0;    background: #ffffffc4; "
                                         class=" w-100 text-black  position-absolute">
                                         <div class=" w-100 ">
                                             <h4>fsfvsdf</h4>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="portfolio-wrap h-100">
-                                        <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
-                                            alt="">
+                                        <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
                                         <div class=" portfolio-info">
                                             <!-- <h4><a href="" class="text-white"><?= $pks['product_category_name'] ?></a> -->
                                             </h4>

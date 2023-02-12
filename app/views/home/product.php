@@ -14,7 +14,7 @@
     <section id="team" class="team">
         <div class="container">
             <div class="row portfolio">
-                <div class="col-lg-12 d-flex justify-content-center">
+                <!-- <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
                         <li data-filter=".filter-1">Besi</li>
@@ -24,7 +24,7 @@
 
 
                     </ul>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <?php
@@ -35,7 +35,7 @@
                         $status = 'bg-red';
                     }
                 ?>
-                <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center p-4 justify-content-center
+                <div class="col-md-4 col-sm-6 d-flex flex-column align-items-center p-4 justify-content-center
                     product-item my-3">
                     <div class="product">
                         <!-- <div class="tag <?= $status ?>"><?= $p['status'] ?></div> -->

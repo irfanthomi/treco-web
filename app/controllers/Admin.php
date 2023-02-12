@@ -1728,14 +1728,14 @@ class Admin extends Rtx_controller
                     $config['upload_path'] = './rn/product/image/'; //path folder
                     $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
                     $config['max_size'] = '5000'; // max_size in kb
-                    $config['file_name'] = $_FILES['files']['name'][$i];
+                    $config['file_name'] = "" . $product_id . "-" .  $this->input->post('product_name') . "-" . ($i + 1) . "";
+
                     $this->load->library('upload', $config);
                     $this->upload->initialize($config);
                     if ($this->upload->do_upload('file')) {
                         $uploadData = $this->upload->data();
                         $filename = $uploadData['file_name'];
                         $data['totalFiles'][] = $filename;
-
 
                         // insert image product
                         $this->M_admin->add_product_image($product_id, $filename);
@@ -1792,14 +1792,14 @@ class Admin extends Rtx_controller
         }
     }
 
-    function productEdit($id = '')
+    function productEdit($product_id = '')
     {
-        cek_table('product', 'product_id', $id);
-        if ($id == '') {
+        cek_table('product', 'product_id', $product_id);
+        if ($product_id == '') {
             redirect(base_url('admin/product'));
         }
-        $product = $this->M_admin->productEdit($id);
-        $product_images =  $this->M_admin->productImage($id);
+        $product = $this->M_admin->productEdit($product_id);
+        $product_images =  $this->M_admin->productImage($product_id);
         $x = [
             'judul' => "Edit Product",
             'aksi' => "edit",
@@ -1808,49 +1808,92 @@ class Admin extends Rtx_controller
             'product_category' => $this->db->get('product_category')->result_array()
         ];
         if (isset($_POST['edit'])) {
+
             $product_name = $this->input->post('product_name');
             $product_category = $this->input->post('product_category');
             $product_description = $this->input->post('product_description');
             $id_user = $this->session->userdata('id_user');
-            if (empty($_FILES['product_image']['name'])) {
+
+
+            // var_dump($_FILES['files']['name'][0]);
+            // die;
+            if (empty($_FILES['files']['name'][0])) {
                 $dataProduct = array(
                     'product_name' => $product_name,
                     'product_category' => $product_category,
                     'product_description' => $product_description,
                 );
-                $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
-                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
-                redirect(base_url('admin/product'));
+                $query =  $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $product_id]);
+                if ($query) {
+                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Edit</span>');
+                    redirect(base_url('admin/productEdit/') . $product_id);
+                } else {
+                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Data gagal Di Edit</span>');
+                    redirect(base_url('admin/productEdit/') . $product_id);
+                }
             } else {
-                if ($product['product_image'] != "") {
-                    unlink('./rn/product/img/' . $product['product_image']);
-                } else {
-                }
+                $count = count($_FILES['files']['name']);
+                $data = [];
+                for ($i = 0; $i < $count; $i++) {
+                    if (!empty($_FILES['files']['name'][$i])) {
+                        $_FILES['file']['name'] = $_FILES['files']['name'][$i];
+                        $_FILES['file']['type'] = $_FILES['files']['type'][$i];
+                        $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+                        $_FILES['file']['error'] = $_FILES['files']['error'][$i];
+                        $_FILES['file']['size'] = $_FILES['files']['size'][$i];
+                        $config['upload_path'] = './rn/product/image/'; //path folder
+                        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+                        $config['max_size'] = '5000'; // max_size in kb
+                        $config['file_name'] = "" . $product_id . "-" .  $product_name . "-" . ($i + 1) . "";
 
-                $nmfile = "file_" . time();
-                $config['upload_path'] = './rn/product/image/';
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-                $config['max_size'] = '4048';
-                $config['file_name'] = $nmfile; //nama yang terupload nantinya
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);
-                if ($this->upload->do_upload('product_image')) {
-                    @unlink('./rn/product/image' . $product['product_image']);
-                    $gbr = $this->upload->data();
-                    $gambar = $gbr['file_name'];
-                    $dataProduct = [
-                        'product_name' => $product_name,
-                        'product_category' => $product_category,
-                        'product_description' => $product_description,
-                        'product_image' => $gambar,
-                    ];
-                    $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
-                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
-                    redirect(base_url('admin/product'));
-                } else {
-                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</span>'));
-                    redirect(base_url('admin/product'));
+                        // var_dump("" . $product_id . "-" .  $product_name . "-" . ($i + 1) . "");
+                        // die;
+                        $this->load->library('upload', $config);
+                        $this->upload->initialize($config);
+                        if ($this->upload->do_upload('file')) {
+                            $uploadData = $this->upload->data();
+                            $filename = $uploadData['file_name'];
+                            $data['totalFiles'][] = $filename;
+
+                            // insert image product
+                            $this->M_admin->add_product_image($product_id, $filename);
+                        } else {
+                            echo $this->upload->display_errors();
+                        }
+                    }
                 }
+                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data & foto Berhasil Di Edit</span>');
+                redirect(base_url('admin/productEdit/') . $product_id);
+
+                // if ($product['product_image'] != "") {
+                //     unlink('./rn/product/img/' . $product['product_image']);
+                // } else {
+                // }
+
+                // $nmfile = "file_" . time();
+                // $config['upload_path'] = './rn/product/image/';
+                // $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+                // $config['max_size'] = '4048';
+                // $config['file_name'] = $nmfile; //nama yang terupload nantinya
+                // $this->load->library('upload', $config);
+                // $this->upload->initialize($config);
+                // if ($this->upload->do_upload('product_image')) {
+                //     @unlink('./rn/product/image' . $product['product_image']);
+                //     $gbr = $this->upload->data();
+                //     $gambar = $gbr['file_name'];
+                //     $dataProduct = [
+                //         'product_name' => $product_name,
+                //         'product_category' => $product_category,
+                //         'product_description' => $product_description,
+                //         'product_image' => $gambar,
+                //     ];
+                //     $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
+                //     $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
+                //     redirect(base_url('admin/product'));
+                // } else {
+                //     $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</span>'));
+                //     redirect(base_url('admin/product'));
+                // }
             }
         } else {
             $x['judul'] = "Edit Product";
@@ -1860,6 +1903,23 @@ class Admin extends Rtx_controller
         }
     }
 
+    public function productImageDelete($image_id, $product_id)
+    {
+        cek_session('admin');
+        $query = $this->M_admin->select_where('product_images', 'id', $image_id);
+        $row = $query->row();
+
+        if ($row->image_name != "") {
+            unlink('./rn/product/image/' . $row->image_name);
+        } else {
+        }
+        $this->db->delete("product_images", array(
+            'id' => $image_id,
+            'product_id' => $product_id
+        ));
+        $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
+        redirect(base_url('admin/productEdit/') . $product_id);
+    }
     public function productDelete($id)
     {
         cek_session('admin');
@@ -1869,7 +1929,6 @@ class Admin extends Rtx_controller
             unlink('./rn/product/image/' . $row->product_image);
         } else {
         }
-
         $this->db->delete("product", array(
             'product_id' => $id
         ));

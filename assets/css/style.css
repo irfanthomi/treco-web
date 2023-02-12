@@ -2422,7 +2422,7 @@ section {
   font-size: 16px;
   padding: 0 30px;
   margin: 3px;
-  background: #e96b56;
+  background: #b82b2b;
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
@@ -2675,7 +2675,7 @@ section {
 .container .product-item .product img {
   width: 100%;
   height: 100%;
-  object-fit: cover
+  object-fit: contain;
 }
 
 .container .product-item .product .icons .icon {

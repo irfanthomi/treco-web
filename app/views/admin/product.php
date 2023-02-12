@@ -48,7 +48,6 @@
                                     <th class="column-title">Nama</th>
                                     <th class="column-title">Kategori </th>
                                     <th class="column-title">Deskripsi </th>
-                                    <th class="column-title">Foto </th>
                                     <th colspan="2" class="text-center column-title  no-link last"><span
                                             class="nobr">Action</span>
                                     </th>
@@ -67,21 +66,6 @@
                                     <td class=" "><?= $p['product_name']; ?></td>
                                     <td class=" "><?= $p['product_category_name']; ?></td>
                                     <td class=" "><?= $p['product_description']; ?></td>
-                                    <td>
-                                        <ul class="list-inline">
-                                            <li>
-                                                <img src="<?php
-                                                                $ada = file_exists("rn/product/image/" . $p['product_image']);
-                                                                if ($ada) :
-                                                                    echo base_url("rn/product/image/" . $p['product_image']);
-                                                                elseif (!$ada) :
-                                                                    echo base_url("rn/admin/dist/img/no-image.jpg");
-                                                                endif;
-
-                                                                ?>" class="avatar" alt="<?= $p['product_image'] ?>">
-                                            </li>
-                                        </ul>
-                                    </td>
                                     <td class="text-center last p-1">
                                         <a href="<?php echo base_url('admin/productEdit/' . $p['product_id']); ?>"
                                             title="Edit" class="btn text-light bg-defauld btn-sm">
@@ -94,8 +78,6 @@
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
-
-
                                 </tr>
                                 <?php
                                     $no++;
@@ -153,7 +135,6 @@
                                 </select>
                             </div>
                         </div>
-                        <input type='file' name='files[]' multiple=""> <br /><br />
 
                         <div class="item form-group">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Product
@@ -169,7 +150,7 @@
                                 <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input name="product_image" required type="file" id="formFile">
+                                <input type='file' name='files[]' multiple="">
                             </div>
                         </div>
                     </div>
