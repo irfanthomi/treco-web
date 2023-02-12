@@ -80,7 +80,7 @@
                 <div data-aos="zoom-in" data-aos-delay="200"
                     class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
                     <div>
-                        <><?= $setting->Nama ?></ h3>
+                        <h3><?= $setting->Nama ?></h3>
                         <p>
                             <?= $setting->deskripsi ?>
                         </p>
