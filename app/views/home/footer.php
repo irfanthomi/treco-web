@@ -109,7 +109,7 @@
 
 
 <!-- Template Main JS File -->
-<script src="<?= base_url('') ?>/assets/js/main.js"></script>
+<script src="<?= base_url('') ?>/assets/js/main1.js"></script>
 <script>
 $(function() {
     $('#search-button').hover(function() {
