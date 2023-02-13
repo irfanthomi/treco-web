@@ -39,11 +39,8 @@
     <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
         <div class="container">
-
             <div class="row">
-
-
-                <div class="benefit-slider h-100 swiper">
+                <div class="px-4 px-md-0 benefit-slider h-100 swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class=" mt-4 mb-4">
@@ -120,71 +117,6 @@
 
                     </div>
                 </div>
-
-
-                <!-- 
-                    <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-gem"></i>
-                        <h3><a href="">BAHAN BAKU
-                            </a></h3>
-                        <p>Terbuat dari material galvalum yang berkualitas
-                            SNI 4096.2007
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-clipboard-data"></i>
-                        <h3><a href="">SOFTWARE</a></h3>
-                        <p>Analisis dalam pengaplikasian TRECO didukung dan dikunci dengan SOFTWARE Treco Truss System
-                            Quik Series</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-cash-coin"></i>
-                        <h3><a href="">APPLICATOR
-                            </a></h3>
-                        <p>Para APPLICATOR mitra TRECO diberikan PELATIHAN dan sertifikasi
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-cash-coin"></i>
-                        <h3><a href="">QUALITY CONTROL
-
-                            </a></h3>
-                        <p>Mengendalikan quality dengan INSPEKSI, sehingga menghasilkan produk yang OPTIMAL
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-cash-coin"></i>
-                        <h3><a href="">PRODUK
-
-                            </a></h3>
-                        <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <i class="bi bi-cash-coin"></i>
-                        <h3><a href="">DISTRIBUTOR
-
-                            </a></h3>
-                        <p>3 TITIK DISTRIBUTOR yang ada
-                            (Solok, Sijunjung, dan Padang Pariaman)
-
-                        </p>
-                    </div>
-                </div> -->
             </div>
 
         </div>
@@ -220,75 +152,34 @@
             </p>
         </div>
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
-            <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
+            <div class="overflow-hiddsen p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
                 <div class="container-fuild">
 
-                    <div class="row" style="height: 600px;">
+                    <div class="row">
                         <div data-aos="fade-right" data-aos-duration="1000"
                             class="shadow border col-md-6 p-0 home-galery">
-                            <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="" alt="">
+                            <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
                         </div>
-                        <div data-aos="fade-left" data-aos-duration="1000" class="col-md-6  home-galery ">
-                            <div class="row h-100">
-
+                        <div data-aos="fade-left" data-aos-duration="1000"
+                            class="shadow border col-md-6 p-0 home-galery">
+                            <div class="row">
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
                                 <div id=" portfolio "
                                     class=" border shadow position-relative portfolio col-md-6 p-0  h-50">
-                                    <!-- <div style=" z-index:2; bottom:0;    background: #ffffffc4; "
-                                        class=" w-100 text-black  position-absolute">
-                                        <div class=" w-100 ">
-                                            <h4>fsfvsdf</h4>
-                                        </div>
-                                    </div> -->
                                     <div class="portfolio-wrap h-100">
                                         <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
                                         <div class=" portfolio-info">
-                                            <!-- <h4><a href="" class="text-white"><?= $pks['product_category_name'] ?></a> -->
-                                            </h4>
-                                            <hr>
                                             <h3><a href="" class=" text-white">Lihat Produk</a></h3>
                                         </div>
                                     </div>
                                 </div>
-
                                 <?php endforeach; ?>
 
                             </div>
                         </div>
-                        <!-- <div class="clients-slider2 swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div>
-                                    <div class="swiper-slide col-md-12">
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div>
-                                    <div class="swiper-slide col-md-12">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZU-3sc-UMHCRLkIk3JvVDb1PqOJLAFha7S4_a6uIgvM9lRJyOSq3SFkzUUuSvh1HLpks&usqp=CAU"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div> -->
                     </div>
-
-
                 </div>
                 <div class="text-center pt-3">
                     <a href="">
