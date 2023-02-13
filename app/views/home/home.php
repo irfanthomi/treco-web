@@ -155,7 +155,7 @@
             <div class="overflow-hiddsen p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
                 <div class="container-fuild">
 
-                    <div class="row">
+                    <div class="row w-100">
                         <div data-aos="fade-right" data-aos-duration="1000"
                             class="shadow border col-md-6 p-0 home-galery">
                             <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
