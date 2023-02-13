@@ -45,17 +45,42 @@
                         <div class="swiper-slide">
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
-                                    <h3><a href="">PRODUK
+                                    <i class="bi bi-bookmark-check-fill"></i>
+                                    <h3><a href="">APPLICATOR
                                         </a></h3>
-                                    <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.</p>
+                                    <p>Para APPLICATOR mitra TRECO diberikan PELATIHAN dan sertifikasi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-inboxes-fill"></i>
+                                    <h3><a href="">BAHAN BAKU</a></h3>
+                                    <p>Terbuat dari material galvalum yang berkualitas<b> SNI 4096.2007</b>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
+                                    <i class="bi bi-cpu-fill"></i>
+                                    <h3><a href="">SOFTWARE
+                                        </a></h3>
+                                    <p>Analisis dalam pengaplikasian TRECO didukung dan dikunci dengan SOFTWARE Treco
+                                        Truss System Quik Series
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class=" mt-4 mb-4">
+                                <div class="icon-box">
+                                    <i class="bi bi-microsoft-teams"></i>
                                     <h3><a href="">DISTRIBUTOR</a></h3>
                                     <p>3 TITIK DISTRIBUTOR yang ada (Solok, Sijunjung, dan Padang Pariaman) </p>
                                 </div>
@@ -64,12 +89,10 @@
                         <div class="swiper-slide">
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
+                                    <i class="bi bi-clipboard2-check"></i>
                                     <h3><a href="">QUALITY CONTROL
-
                                         </a></h3>
                                     <p>Mengendalikan quality dengan INSPEKSI, sehingga menghasilkan produk yang OPTIMAL
-
                                     </p>
                                 </div>
                             </div>
@@ -78,7 +101,7 @@
 
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
+                                    <i class="bi bi-boxes"></i>
                                     <h3><a href="">PRODUK
 
                                         </a></h3>
@@ -89,32 +112,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class=" mt-4 mb-4">
-                                <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
-                                    <h3><a href="">APPLICATOR
-                                        </a></h3>
-                                    <p>Para APPLICATOR mitra TRECO diberikan PELATIHAN dan sertifikasi
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class=" mt-4 mb-4">
-                                <div class="icon-box">
-                                    <i class="bi bi-cash-coin"></i>
-                                    <h3><a href="">DISTRIBUTOR
-
-                                        </a></h3>
-                                    <p>3 TITIK DISTRIBUTOR yang ada
-                                        (Solok, Sijunjung, dan Padang Pariaman)
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

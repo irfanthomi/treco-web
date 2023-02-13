@@ -552,7 +552,7 @@ h6 {
 
 
 .mobile-nav-toggle {
-  color: #545454;
+  color: #e8e8e8;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -585,7 +585,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(59, 59, 59, 0.9);
+  background: rgb(51 51 51 / 65%);
   transition: 0.3s;
   z-index: 999;
 }
@@ -604,7 +604,7 @@ h6 {
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  background-color: #ffffff;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -613,7 +613,7 @@ h6 {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #545454;
+  color: #3b3b3b;
 }
 
 .navbar-mobile a:hover,

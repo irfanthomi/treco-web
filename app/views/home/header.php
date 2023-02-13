@@ -73,7 +73,7 @@
                         <div class=" ms-2">
                             <div><b><?= $setting->telepone ?></b></div>
                             <div class="text-muted">
-                                <small>Call Center</small>
+                                <small>WhatsApp</small>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 <b><?= $setting->email ?> </b>
                             </div>
                             <div class="text-muted">
-                                <small>WhatsApp</small>
+                                <small>Email</small>
                             </div>
                         </div>
                     </div>

@@ -77,7 +77,7 @@
                     <div class=" text-muted d-flex align-content-center justify-content-center">
                         <small><i> kategori : <?= $p['product_category_name'] ?></i></small>
                     </div>
-                    <div class="price">Rp. <?= number_format($p['price']) ?></div>
+                    <!-- <div class="price">Rp. <?= number_format($p['price']) ?></div> -->
                 </div>
 
                 <?php endforeach; ?>
