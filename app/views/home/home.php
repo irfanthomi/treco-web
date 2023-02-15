@@ -198,7 +198,7 @@
             <div class="section-title">
                 <h2>Blogs</h2>
             </div>
-            <div class="clients-slider swiper">
+            <div class="clients-slider px-2 swiper">
                 <div class="swiper-wrapper">
 
                     <?php

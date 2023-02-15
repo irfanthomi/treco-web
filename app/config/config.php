@@ -329,7 +329,7 @@ $config['cache_query_string'] = FALSE;
 | https://Rtx.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'treco.id';
 
 /*
 |--------------------------------------------------------------------------
