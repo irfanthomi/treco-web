@@ -52,7 +52,7 @@ class Akses extends Rtx_controller
         redirect(base_url('admin'));
       } else {
 
-        $this->session->set_flashdata('pesan', '<div class="alert alert-danger">Login Gagal Username Dan Password Salah</div>');
+        $this->session->set_flashdata('pesan', '<span class="text-danger">Login Gagal Username Dan Password Salah</span>');
         redirect(base_url('akses'));
       }
     } else {

@@ -28,7 +28,7 @@
 
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url('') ?>assets/css/style1.css" rel="stylesheet">
+    <link href="<?= base_url('') ?>assets/css/style.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/css/sweetAlert6.css" rel="stylesheet">
     <script src=" <?= base_url('assets') ?>/js/sweetAlert6.js"></script>
 
@@ -61,35 +61,41 @@
             <div class="row">
                 <div class=" col-md-6">
                     <a href="<?= base_url('') ?>">
-                        <div class="logo d-flex ">
-                            <img class="py-2" src="<?= base_url('') ?>rn/home/img/logo.png" alt="">
+                        <div class="logo  d-flex ">
+                            <img class="  py-2" src="<?= base_url('') ?>rn/home/img/logo.png" alt="">
                         </div>
                     </a>
                 </div>
                 <div class=" d-none d-sm-flex col-md-6  contact-info d-flex align-items-center">
-                    <div class=" d-flex contact-info-detail justify-content-center  px-3 border-end">
-                        <div class="fs-2 d-flex align-items-center"><i
-                                class="bi bi-whatsapp d-flex align-items-center ms-4"></i></div>
-                        <div class=" ms-2">
-                            <div><b><?= $setting->telepone ?></b></div>
-                            <div class="text-muted">
-                                <small>WhatsApp</small>
+                    <a href=" https://wa.me/<?= $setting->telepone ?>">
+                        <div class=" d-flex contact-info-detail justify-content-center  px-3 border-end">
+                            <div class="fs-2 d-flex align-items-center"><i
+                                    class="bi bi-whatsapp d-flex align-items-center "></i>
+                            </div>
+                            <div class=" ms-2">
+                                <div><b><?= $setting->telepone ?></b></div>
+                                <div class="text-muted">
+                                    <small>WhatsApp</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=" d-flex contact-info-detail justify-content-center px-3">
-                        <div class="fs-2 d-flex align-items-center"><i
-                                class="bi bi-envelope d-flex align-items-center"></i>
-                        </div>
-                        <div class=" ms-2">
-                            <div>
-                                <b><?= $setting->email ?> </b>
+                    </a>
+                    <a href=" mailto:<?= $setting->email ?>">
+
+                        <div class=" d-flex contact-info-detail justify-content-center px-3">
+                            <div class="fs-2 d-flex align-items-center"><i
+                                    class="bi bi-envelope d-flex align-items-center"></i>
                             </div>
-                            <div class="text-muted">
-                                <small>Email</small>
+                            <div class=" ms-2">
+                                <div>
+                                    <b><?= $setting->email ?> </b>
+                                </div>
+                                <div class="text-muted">
+                                    <small>Email</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,9 +116,12 @@
             <div class="box d-flex align-items-center position-relative">
                 <div id="mobile-topbar" class="d-flex">
                     <div class="px-1 social-links  d-flex align-items-center">
-                        <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a target="_blank" href=" https://wa.me/<?= $setting->telepone ?>"
+                            class=" border rounded p-2 whatsapp"><i class="bi bi-whatsapp"></i></i></a>
+                        <a href="tel:<?= $setting->telepone ?>" class=" border rounded p-2 facebook"><i
+                                class="bi bi-telephone-fill"></i></a>
+                        <a href="mailto:<?= $setting->email ?>" class=" border rounded p-2 facebook"><i
+                                class="bi bi-envelope-fill"></i></a>
                     </div>
 
                 </div>

@@ -18,6 +18,7 @@ $route['video/(:any)']             = 'home/video/$1';
 $route['download']                 = 'home/download';
 $route['product']                  = 'home/product';
 $route['cari']                     = 'home/cari';
+$route['treco-admin']                     = 'akses';
 $route['kalkulator']               = 'home/kalkulator';
 $route['project']               = 'home/project';
 // $route['remove-image(:any)/(:any)'] = 'admin/productImageDelete/$1/$2';

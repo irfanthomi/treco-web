@@ -15,6 +15,8 @@ class Home extends Rtx_controller
 			show_404();
 			exit();
 		} else {
+			$this->output->set_header('Cache-Control: max-age=' . getenv('CACHE_TIME') . ', public');
+			$this->output->set_header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
 			$this->load->helper('language');
 			$this->load->model('homemodel');
 			$this->load->model('M_admin');

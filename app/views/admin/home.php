@@ -1,6 +1,6 @@
-<script src="<?= base_url('rn\home\js') ?>\highcharts.js"></script>
+<!-- <script src="<?= base_url('rn\home\js') ?>\highcharts.js"></script>
 <script src="<?= base_url('rn\home\js') ?>\exporting.js"></script>
-<script src="<?= base_url('rn\home\js') ?>\export-data.js"></script>
+<script src="<?= base_url('rn\home\js') ?>\export-data.js"></script> -->
 
 <!-- page content -->
 <div class="right_col" role="main">

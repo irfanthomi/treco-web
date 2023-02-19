@@ -2,11 +2,8 @@
     <section id="hero">
         <div class="hero-container">
             <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
                 <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
                 <div class="carousel-inner" role="listbox">
-
                     <!-- Slide 1 -->
                     <?php $no = 1;
                     foreach ($slide->result_array() as $slid) : $active = $no++ == 1 ? "active" : ""; ?>
@@ -22,17 +19,13 @@
                     </div> -->
                     </div>
                     <?php endforeach; ?>
-
                 </div>
-
                 <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
                 </a>
-
                 <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
                     <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
                 </a>
-
             </div>
         </div>
     </section><!-- End Hero -->
@@ -53,7 +46,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="swiper-slide">
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
@@ -72,7 +64,6 @@
                                         </a></h3>
                                     <p>Analisis dalam pengaplikasian TRECO didukung dan dikunci dengan SOFTWARE Treco
                                         Truss System Quik Series
-
                                     </p>
                                 </div>
                             </div>
@@ -98,16 +89,12 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-
                             <div class=" mt-4 mb-4">
                                 <div class="icon-box">
                                     <i class="bi bi-boxes"></i>
                                     <h3><a href="">PRODUK
-
                                         </a></h3>
                                     <p>Produk dengan MUTU TERPADU terdiri dari Kanal, Reng, Furing, dan Spandek.
-
-
                                     </p>
                                 </div>
                             </div>
@@ -115,14 +102,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section><!-- End Featured Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container">
-
             <div class="row ">
                 <div data-aos="fade-right" class="col-lg-6 d-flex align-items-center">
                     <img src="<?= base_url('rn/home/img/') ?><?= $setting->logo ?>" class=" logo-home img-fluid" alt="">
@@ -130,14 +115,13 @@
                 <div data-aos="zoom-in" data-aos-delay="200"
                     class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
                     <div>
-                        <h3><?= $setting->Nama ?></h3>
-                        <p>
+                        <h3 class="text-center text-md-start"><?= $setting->Nama ?></h3>
+                        <p class="text-center text-md-start">
                             <?= $setting->deskripsi ?>
                         </p>
                     </div>
                 </div>
             </div>
-
         </div>
     </section><!-- End About Section -->
 
@@ -151,7 +135,6 @@
         <div style="background-attachment:fixed; background-image: url(<?= base_url('assets/img') ?>/static.jpg ">
             <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
                 <div class="container-fuild">
-
                     <div class="row w-100">
                         <div data-aos="fade-right" data-aos-duration="1000"
                             class="shadow border col-md-6 p-0 home-galery">
@@ -172,10 +155,8 @@
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="text-center pt-3">
@@ -184,15 +165,11 @@
                             Lainnnya
                         </button>
                     </a>
-
                 </div>
             </div>
         </div>
     </section><!-- End Services Section -->
     <!-- Product -->
-
-
-
     <section id="clients" class="clients">
         <div class="container">
             <div class="section-title">
@@ -200,7 +177,6 @@
             </div>
             <div class="clients-slider px-2  swiper">
                 <div class="swiper-wrapper">
-
                     <?php
                     foreach ($latest->result_array() as $lt) : ?>
                     <div class="swiper-slide">
@@ -215,23 +191,12 @@
                             </div>
                         </div>
                     </div>
-
                     <?php endforeach; ?>
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-
-        </div>
-
         </div>
     </section><!-- End Product Section -->
 
-    <!-- Tabs content -->
-
-
-
-
-    <!-- Tabs content -->
 
 </main><!-- End #main -->

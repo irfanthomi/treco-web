@@ -212,12 +212,12 @@
     speed: 400,
     loop: true,
     autoplay: {
-      delay: 1000,
+      delay: 2000,
       disableOnInteraction: false
     },
     slidesPerView: 'auto',
     pagination: {
-      el: '.swiper-pagination',
+      el: '.benefit-pagination',
       type: 'bullets',
       clickable: true
     },
