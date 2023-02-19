@@ -1642,7 +1642,7 @@ class Admin extends Rtx_controller
         session_destroy();
         unset($_SESSION['KCFINDER']);
         unset($_SESSION['KCFINDER']['uploadURL']);
-        redirect(base_url('akses'));
+        redirect(base_url('treco-admin'));
     }
 
 

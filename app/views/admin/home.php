@@ -13,7 +13,7 @@
 
 
                 <marquee behavior="200" direction="">
-                    <h4>Welcome Admin "Ikatan Dosen Menulis"</h4>
+                    <h4>Welcome Admin</h4>
                 </marquee>
 
                 <div class="clearfix"></div>

@@ -69,9 +69,10 @@ function keluar() {
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
-                        <a href="<?= base_url('admin') ?>" class="site_title">
-                            <h4>TRECO</h4>
+                    <div class="  navbar nav_title" style="border: 0;">
+                        <a href="<?= base_url('admin') ?>"
+                            class=" d-flex justify-content-center  align-items-center site_title">
+                            <h4 class="m-0">TRECO</h4>
                         </a>
                     </div>
                     <div class="clearfix"></div>
@@ -111,7 +112,7 @@ function keluar() {
                                 <li><a href="<?= base_url('admin/menu') ?>"><i class="fa fa-bars"
                                             aria-hidden="true"></i> Menu </a>
                                 </li>
-
+                                <!-- 
                                 <li>
                                     <a><i class="fa fa-users" aria-hidden="true">
                                         </i> User <span class="fa fa-chevron-down"></span>
@@ -120,7 +121,7 @@ function keluar() {
                                         <li><a href="<?= base_url('admin\team') ?>">List</a></li>
                                         <li><a href="<?= base_url('admin\jabatan') ?>">Jabatan</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                         </i> Product <span class="fa fa-chevron-down"></span>
@@ -185,7 +186,8 @@ function keluar() {
                                 </a>
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="<?= base_url('assets/admin/') ?>images/img.jpg" alt="">John Doe
+                                    <img src="<?= base_url('assets/admin/') ?>images/img.jpg"
+                                        alt=""><?= $this->session->userdata('nama') ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
