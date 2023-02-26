@@ -1935,4 +1935,55 @@ class Admin extends Rtx_controller
         $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
         redirect(base_url('admin/product'));
     }
+
+
+
+    public function product_category()
+    {
+        $product_category_name = $this->input->post('product_category_name');
+        $product_category_description = $this->input->post('product_category_description');
+        $product_category_id = $this->input->post('id');
+
+        if (isset($_POST['add'])) {
+        } elseif (isset($_POST['edit'])) {
+            if (!empty($_FILES['product_category_image']['name'][0])) {
+                $query = $this->db->get_where('product_category', ['product_category_id' => $product_category_id]);
+
+                $nmfile = "product_category_image_" . $product_category_name . "_" . time();
+
+                $config['upload_path'] = './rn/product_category/';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+                $config['file_name'] = $nmfile;
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+                if ($this->upload->do_upload('product_category_image')) {
+                    $product_data = [
+                        'product_category_name' => $product_category_name,
+                        'product_category_description' => $product_category_description,
+                        'product_category_image' => $this->upload->file_name
+                    ];
+                    unlink('./rn/product_category/' . $query->row()->product_category_image);
+                    $query =  $this->M_admin->updatedata('product_category', $product_data, ['product_category_id' => $product_category_id]);
+                } else {
+                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-danger callout-danger">', '</div>'));
+                }
+            } else {
+                $product_data = [
+                    'product_category_name' => $product_category_name,
+                    'product_category_description' => $product_category_description
+                ];
+                $query =  $this->M_admin->updatedata('product_category', $product_data, ['product_category_id' => $product_category_id]);
+                var_dump($product_category_id);
+            }
+            redirect(base_url('admin/product_category'));
+        } else {
+            $data = [
+                'judul' => "Kategori Produk",
+                'product_category' => $this->db->get('product_category')->result_array(),
+            ];
+            $this->load->view('admin/header', $data);
+            $this->load->view('admin/product_category');
+            $this->load->view('admin/footer');
+        }
+    }
 }

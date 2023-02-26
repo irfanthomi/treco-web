@@ -1,3 +1,19 @@
+<style>
+.title-product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: .8em 1.2em;
+    color: black;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+</style>
 <main id="main">
     <section id="hero">
         <div class="hero-container">
@@ -136,21 +152,23 @@
             <div class="overflow-hidden p-x-3" style="padding: 67px 0px 27px 0px; background:#ffffffd9 ">
                 <div class="container-fuild">
                     <div class="row w-100">
-                        <div data-aos="fade-right" data-aos-duration="1000"
-                            class="shadow border col-md-6 p-0 home-galery">
-                            <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
-                        </div>
                         <div data-aos="fade-left" data-aos-duration="1000"
-                            class="shadow border col-md-6 p-0 home-galery">
+                            class="shadow border col-md-12 p-0 home-galery">
                             <div class="row">
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
                                 <div id=" portfolio "
                                     class=" border shadow position-relative portfolio col-md-6 p-0  h-50">
                                     <div class="portfolio-wrap h-100">
-                                        <img src="<?= base_url('assets/img') ?>/static/coming.jpeg " alt="">
+                                        <img src="<?= base_url('rn/product_category/') ?><?= $pks['product_category_image'] ?> "
+                                            alt="">
+                                        <!-- <div class="position-absolute  title-product">
+                                                <h4 class="m-0"><?= $pks['product_category_name'] ?></h4>
+                                            </div> -->
                                         <div class=" portfolio-info">
-                                            <h3><a href="" class=" text-white">Lihat Produk</a></h3>
+                                            <h1><a href="" class=" text-white"><?= $pks['product_category_name'] ?></a>
+                                            </h1>
+                                            <h4><a href="" class=" text-white">Lihat Produk</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -159,13 +177,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center pt-3">
+                <!-- <div class="text-center pt-3">
                     <a href="">
                         <button class="btn-basic ">
                             Lainnnya
                         </button>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section><!-- End Services Section -->
