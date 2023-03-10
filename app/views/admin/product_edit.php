@@ -41,20 +41,20 @@
                     <div class="x_content">
                         <form action="" method="POST" class="form-horizontal form-label-left" enctype="multipart/form-data">
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama
+                                <label class="col-form-label col-md-2 col-sm-2 " for="first-name">Nama
                                     Product
                                     <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 ">
+                                <div class="col-md-9 col-sm-9 ">
                                     <input type="text" name="product_name" value="<?= $product['product_name'] ?>" required class="form-control ">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Kategori
+                                <label class="col-form-label col-md-2 col-sm-2 " for="first-name">Kategori
                                     Product
                                     <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 ">
+                                <div class="col-md-9 col-sm-9 ">
                                     <select class="form-control " name="product_category">
                                         <option selected value="<?= $product['product_category'] ?>">
                                             <?= $product['product_category_name'] ?></option>
@@ -69,20 +69,20 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Product
+                                <label class="col-form-label col-md-2 col-sm-2 " for="first-name">Product
                                     Description
                                     <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 ">
-                                    <textarea name="product_description" required class="form-control "><?= $product['product_description'] ?></textarea>
+                                <div class="col-md-9 col-sm-9 ">
+                                    <textarea name="product_description" id="productEdit<?= $product['product_id'] ?>" required class="form-control "><?= $product['product_description'] ?></textarea>
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Product
+                                <label class="col-form-label col-md-2 col-sm-2 " for="first-name">Product
                                     Image
                                     <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-9 col-sm-9">
                                     <div>
                                         <input type='file' name='files[]' multiple="">
                                     </div>
@@ -117,3 +117,27 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    CKEDITOR.config.allowedContent = true;
+    CKEDITOR.config.pasteFromWordRemoveStyles = false;
+    CKEDITOR.config.pasteFromWordNumberedHeadingToList = true;
+    CKEDITOR.config.pasteFromWordPromptCleanup = true;
+    CKEDITOR.config.pasteFromWord_heuristicsEdgeList = false;
+    CKEDITOR.config.pasteFromWord_inlineImages = false;
+
+
+
+
+    CKEDITOR.replace('productEdit' + <?= $product['product_id'] ?>, {
+
+        filebrowserImageBrowseUrl: '<?php echo base_url('assets/filemanager/index.html'); ?>',
+        filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile?type=images',
+        exportPdf_tokenUrl: 'hkjhknkjknkjnkj',
+        height: '35em',
+        resize_minWidth: 200,
+        resize_minHeight: 300,
+        resize_maxWidth: 2800,
+    })
+</script>

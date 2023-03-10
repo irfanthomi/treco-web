@@ -9,7 +9,7 @@
                         <div class="row px-4">
                             <div class="col-md-4 ">
                                 <div class="p-3">
-                                    <div class="border p-3 product-slider  swipeer">
+                                    <div class="border  product-slider  swipeer">
                                         <div class=" swiper-wreapper">
                                             <?php
                                             $tab = 1;
@@ -17,13 +17,9 @@
                                             $slide = (count($images) > 1) ? "swiper-slide" : "";
                                             foreach ($images as $image) : ?>
 
-                                            <div id="tab<?= $tab++ ?>"
-                                                class=" <?= $tab == 1 ? "active" : "" ?> tabs w-100 <?= $slide ?>">
-                                                <img style="min-height: 18rem;"
-                                                    class="w-100 object-fit-contain lightbox p-2"
-                                                    src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>"
-                                                    alt="<?= $image ?>">
-                                            </div>
+                                                <div id="tab<?= $tab++ ?>" class=" <?= $tab == 1 ? "active" : "" ?> tabs w-100 <?= $slide ?>">
+                                                    <img style="min-height: 18rem;" class="w-100 object-fit-contain lightbox " src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>" alt="<?= $image ?>">
+                                                </div>
                                             <?php
                                             endforeach;
                                             ?>
@@ -40,13 +36,11 @@
                                         <?php
                                         $tab = 1;
                                         foreach ($images as $image) : ?>
-                                        <li class="m-1 ">
-                                            <a href="#tab<?= $tab++ ?>">
-                                                <img class=" object-fit-cover shadow-sm p-2 "
-                                                    src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>"
-                                                    width="100" height="100" alt="<?= $image ?>">
-                                            </a>
-                                        </li>
+                                            <li class="m-1 ">
+                                                <a href="#tab<?= $tab++ ?>">
+                                                    <img class=" object-fit-cover shadow-sm p-2 " src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>" width="100" height="100" alt="<?= $image ?>">
+                                                </a>
+                                            </li>
                                         <?php
                                         endforeach;
                                         ?>
