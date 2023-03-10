@@ -42,30 +42,31 @@
                     product-item my-3">
                     <div class="product">
                         <!-- <div class="tag <?= $status ?>"><?= $p['status'] ?></div> -->
-                        <div class=" h-100">
-                            <div class="product-slider h-100 swiper">
-                                <div class="swiper-wrapper">
-                                    <?php
-                                        $images = explode(',', str_replace(" ", "", $p['images']));
-                                        $slide = (count($images) > 1) ? "swiper-slide" : "";
-                                        foreach ($images as $image) : ?>
+                        <a href="<?= base_url('product_view') ?>/<?= $p['product_id'] ?>/<?= $p['product_name'] ?>">
+                            <div class=" h-100">
+                                <div class="product-slider h-100 swiper">
+                                    <div class="swiper-wrapper">
+                                        <?php
+                                            $images = explode(',', str_replace(" ", "", $p['images']));
+                                            $slide = (count($images) > 1) ? "swiper-slide" : "";
+                                            foreach ($images as $image) : ?>
 
-                                    <div class="<?= $slide ?>">
-                                        <img src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>"
-                                            width="10" alt="<?= $image ?>">
+                                        <div class="<?= $slide ?>">
+                                            <img src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>"
+                                                width="10" alt="<?= $image ?>">
+                                        </div>
+                                        <?php
+                                            endforeach;
+                                            ?>
+
+
+
                                     </div>
-                                    <?php
-                                        endforeach;
-                                        ?>
-
-
-
+                                    <div class="swiper-pagination"></div>
                                 </div>
-                                <div class="swiper-pagination"></div>
+
                             </div>
-
-                        </div>
-
+                        </a>
                         <script>
                         var swiper = new Swiper(".mySwiper", {});
                         </script>

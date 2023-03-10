@@ -7,7 +7,7 @@
     <title>TRECO</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <!-- Favicons --> 
+    <!-- Favicons -->
     <meta property="og:image" content="<?= base_url('/rn/home/img/' . cari('favicon')) ?>">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="<?= base_url('/rn/home/img/' . cari('favicon')) ?>" rel="icon">
@@ -44,12 +44,19 @@
     }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- =======================================================
-  * Template Name: Eterna - v4.9.1
-  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(".tabs").hide();
+    $(".tabs:first").show();
+    $(".tabMenu li a").click(function() {
+        var tablink = $(this).attr('href');
+        $(".tabs").hide();
+        $(tablink).show();
+        $(this).parents(".tabMenu").find('li').removeClass("active");
+        $(this).parents(".tabMenu li").addClass("active");
+        return false;
+    });
+    </script>
 </head>
 
 <body>
