@@ -7,7 +7,7 @@
     <title>TRECO</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <!-- Favicons -->
+    <!-- Favicons --> 
     <meta property="og:image" content="<?= base_url('/rn/home/img/' . cari('favicon')) ?>">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="<?= base_url('/rn/home/img/' . cari('favicon')) ?>" rel="icon">

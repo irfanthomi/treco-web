@@ -429,14 +429,24 @@ class Home extends Rtx_controller
 		$x['judul'] = '';
 		template('contact', $x);
 	}
-	function product()
+	function product($category = '')
 	{
+		$category = urldecode($category);
 		// die;
 		$x = [
 			'judul' => 'Product',
-			'product' => $this->homemodel->product()
+			'product' => $this->homemodel->product($category)
 		];
 		$this->template->load('template', 'home/product', $x);
+	}
+	function product_view($id = '')
+	{
+		// die;
+		$x = [
+			'judul' => 'Product Detail',
+			'product' => $this->homemodel->product_view($id)
+		];
+		$this->template->load('template', 'home/product_view', $x);
 	}
 	function kalkulator()
 	{

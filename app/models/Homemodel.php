@@ -272,14 +272,28 @@ class Homemodel extends CI_model
 		$this->db->limit(4);
 		return $this->db->get()->result_array();
 	}
-	function product()
+	function product($category = '')
 	{
 		$this->db->select('p.*,pc.product_category_name,GROUP_CONCAT(pi.image_name SEPARATOR ",") as images');
 		$this->db->from('product p');
 		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
 		$this->db->join('product_images pi', 'pi.product_id = p.product_id', 'left');
+		if ($category) {
+			$this->db->where('pc.product_category_name', $category);
+		}
 		$this->db->group_by('p.product_id');
 		$query = $this->db->get();
 		return $query->result_array();
+	}
+
+	function product_view($id = '')
+	{
+		$this->db->select('p.*,pc.product_category_name,GROUP_CONCAT(pi.image_name SEPARATOR ",") as images');
+		$this->db->from('product p');
+		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
+		$this->db->join('product_images pi', 'pi.product_id = p.product_id', 'left');
+		$this->db->where('p.product_id', $id);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 }

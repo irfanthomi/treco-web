@@ -28,6 +28,9 @@
             </div>
             <div class="row">
                 <?php
+                if (!$product) { ?>
+                <h4 class="text-center">Product Tidak ditemukan</h4>
+                <?php }
                 foreach ($product as $p) :
                     if ($p['status'] == 'new') {
                         $status = 'bg-green';
@@ -73,7 +76,10 @@
                         </ul>
                     </div>
 
-                    <div class="title pt-3 "><b><?= $p['product_name'] ?></b></div>
+                    <a href="<?= base_url('product_view') ?>/<?= $p['product_id'] ?>/<?= $p['product_name'] ?>">
+
+                        <div class=" title pt-3 "><b><?= $p['product_name'] ?></b></div>
+                    </a>
                     <div class=" text-muted d-flex align-content-center justify-content-center">
                         <small><i> kategori : <?= $p['product_category_name'] ?></i></small>
                     </div>
