@@ -1,4 +1,3 @@
-<?= $this->session->flashdata('pesan'); ?>
 <div class="right_col" role="main" style="min-height: 1288px;">
     <div class="">
         <div class="page-title">
@@ -68,7 +67,7 @@
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <textarea name="product_description" id="editorAdd" required class="form-control "></textarea>
+                                    <textarea name="product_description" id="productAdd" required class="form-control "></textarea>
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -145,8 +144,7 @@
 
 <script>
     CKEDITOR.config.allowedContent = true;
-    CKEDITOR.replace('editorAdd', {
-
+    CKEDITOR.replace('productAdd', {
         filebrowserImageBrowseUrl: '<?php echo base_url('assets/filemanager/index.html'); ?>',
         filebrowserUploadUrl: '<?= base_url() ?>admin/uploadFile?type=images',
         exportPdf_tokenUrl: 'hkjhknkjknkjnkj',

@@ -1717,6 +1717,9 @@ class Admin extends Rtx_controller
 
             // insert data product
             $product_id =  $this->M_admin->addProduct('product', $product_data);
+            if ($product_id) {
+                $this->session->set_flashdata('pesan', success('Sukses', 'Data Product berhasil Ditambahkan'));
+            }
 
             for ($i = 0; $i < $count; $i++) {
                 if (!empty($_FILES['files']['name'][$i])) {
@@ -1740,46 +1743,12 @@ class Admin extends Rtx_controller
                         // insert image product
                         $this->M_admin->add_product_image($product_id, $filename);
                     } else {
-                        echo $this->upload->display_errors();
+                        $this->session->set_flashdata('pesan', danger('Gagal', $this->upload->display_errors()));
                     }
                 }
             }
-            $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
-            redirect(base_url('admin/product'));
 
-            // $nmfile = "product_" . time(); //nama file saya beri nama langsung dan diikuti fungsi time
-            // $config['upload_path'] = './rn/product/image/'; //path folder
-            // $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-            // $config['max_size'] = '4048'; //maksimum besar file 2M
-            // $config['file_name'] = $nmfile; //nama yang terupload nantinya
-            // $this->load->library('upload', $config);
-            // $this->upload->initialize($config);
-            // if ($_FILES['product_image']['name']) {
-            //     if ($this->upload->do_upload('product_image')) {
-            //         $gbr = $this->upload->data();
-            //         $gambar = $gbr['file_name'];
-            //         $product_name = $this->input->post('product_name');
-            //         $product_category = $this->input->post('product_category');
-            //         $product_description = $this->input->post('product_description');
-            //         $createBy = $this->session->userdata('id_user');
-            //         $dataProduct = array(
-            //             'product_name' => $product_name,
-            //             'product_category' => $product_category,
-            //             'product_description' => $product_description,
-            //             'product_image' => $gambar,
-            //             'createBy' => $createBy,
-            //         );
-            //         $this->M_admin->insertdata('product', $dataProduct);
-            //         $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Tambah</span>');
-            //         redirect(base_url('admin/product'));
-            //     } else {
-            //         $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</div>'));
-            //         redirect(base_url('admin/product'));
-            //     }
-            // } else {
-            //     $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Gambar Tidak ADA</span>');
-            //     redirect(base_url('admin/product'));
-            // }
+            redirect(base_url('admin/product'));
         } else {
             $data = [
                 'judul' => "List Product",
@@ -1808,15 +1777,11 @@ class Admin extends Rtx_controller
             'product_category' => $this->db->get('product_category')->result_array()
         ];
         if (isset($_POST['edit'])) {
-
             $product_name = $this->input->post('product_name');
             $product_category = $this->input->post('product_category');
             $product_description = $this->input->post('product_description');
             $id_user = $this->session->userdata('id_user');
 
-
-            // var_dump($_FILES['files']['name'][0]);
-            // die;
             if (empty($_FILES['files']['name'][0])) {
                 $dataProduct = array(
                     'product_name' => $product_name,
@@ -1825,7 +1790,7 @@ class Admin extends Rtx_controller
                 );
                 $query =  $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $product_id]);
                 if ($query) {
-                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Edit</span>');
+                    $this->session->set_flashdata('pesan', success('Sukses', 'Product berhasil terupdate'));
                     redirect(base_url('admin/productEdit/') . $product_id);
                 } else {
                     $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Data gagal Di Edit</span>');
@@ -1846,8 +1811,6 @@ class Admin extends Rtx_controller
                         $config['max_size'] = '5000'; // max_size in kb
                         $config['file_name'] = "" . $product_id . "-" .  $product_name . "-" . ($i + 1) . "";
 
-                        // var_dump("" . $product_id . "-" .  $product_name . "-" . ($i + 1) . "");
-                        // die;
                         $this->load->library('upload', $config);
                         $this->upload->initialize($config);
                         if ($this->upload->do_upload('file')) {
@@ -1862,38 +1825,8 @@ class Admin extends Rtx_controller
                         }
                     }
                 }
-                $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data & foto Berhasil Di Edit</span>');
+                $this->session->set_flashdata('pesan', success('Sukses', 'Product berhasil terupdate'));
                 redirect(base_url('admin/productEdit/') . $product_id);
-
-                // if ($product['product_image'] != "") {
-                //     unlink('./rn/product/img/' . $product['product_image']);
-                // } else {
-                // }
-
-                // $nmfile = "file_" . time();
-                // $config['upload_path'] = './rn/product/image/';
-                // $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-                // $config['max_size'] = '4048';
-                // $config['file_name'] = $nmfile; //nama yang terupload nantinya
-                // $this->load->library('upload', $config);
-                // $this->upload->initialize($config);
-                // if ($this->upload->do_upload('product_image')) {
-                //     @unlink('./rn/product/image' . $product['product_image']);
-                //     $gbr = $this->upload->data();
-                //     $gambar = $gbr['file_name'];
-                //     $dataProduct = [
-                //         'product_name' => $product_name,
-                //         'product_category' => $product_category,
-                //         'product_description' => $product_description,
-                //         'product_image' => $gambar,
-                //     ];
-                //     $this->M_admin->updatedata('product', $dataProduct, ['product_id' => $id]);
-                //     $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Dat Berhasil Di Edit</span>');
-                //     redirect(base_url('admin/product'));
-                // } else {
-                //     $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-success callout-danger">', '</span>'));
-                //     redirect(base_url('admin/product'));
-                // }
             }
         } else {
             $x['judul'] = "Edit Product";
@@ -1917,7 +1850,9 @@ class Admin extends Rtx_controller
             'id' => $image_id,
             'product_id' => $product_id
         ));
-        $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
+
+        $this->session->set_flashdata('pesan', danger('Dihapus', 'gambar berhasil di hapus'));
+
         redirect(base_url('admin/productEdit/') . $product_id);
     }
     public function productDelete($id)
@@ -1932,7 +1867,7 @@ class Admin extends Rtx_controller
         $this->db->delete("product", array(
             'product_id' => $id
         ));
-        $this->session->set_flashdata('pesan', '<span class="callout text-success callout-info">Data Berhasil Di Hapus</span>');
+        $this->session->set_flashdata('pesan', danger('Dihapus', 'Product berhasil di hapus'));
         redirect(base_url('admin/product'));
     }
 
@@ -1940,11 +1875,31 @@ class Admin extends Rtx_controller
 
     public function product_category()
     {
+
         $product_category_name = $this->input->post('product_category_name');
         $product_category_description = $this->input->post('product_category_description');
         $product_category_id = $this->input->post('id');
 
         if (isset($_POST['add'])) {
+            $nmfile = "product_category_image_" . $product_category_name . "_" . time();
+            $config['upload_path'] = './rn/product_category/';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+            $config['file_name'] = $nmfile;
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload('product_category_image')) {
+                $product_data = [
+                    'product_category_name' => $product_category_name,
+                    'product_category_description' => $product_category_description,
+                    'product_category_image' => $this->upload->file_name
+                ];
+                $query =  $this->M_admin->insertdata('product_category', $product_data);
+                $this->session->set_flashdata('pesan', success('Sukses..', 'Kategori berhasil Ditambahkan'));
+            } else {
+                $this->session->set_flashdata('pesan', danger('Gagal..', $this->upload->display_errors()));
+            }
+            redirect(base_url('admin/product_category'));
         } elseif (isset($_POST['edit'])) {
             if (!empty($_FILES['product_category_image']['name'][0])) {
                 $query = $this->db->get_where('product_category', ['product_category_id' => $product_category_id]);
@@ -1964,8 +1919,9 @@ class Admin extends Rtx_controller
                     ];
                     unlink('./rn/product_category/' . $query->row()->product_category_image);
                     $query =  $this->M_admin->updatedata('product_category', $product_data, ['product_category_id' => $product_category_id]);
+                    $this->session->set_flashdata('pesan', success('Sukses', 'Kategori berhasil terupdate'));
                 } else {
-                    $this->session->set_flashdata('pesan', $this->upload->display_errors('<span class="callout text-danger callout-danger">', '</div>'));
+                    $this->session->set_flashdata('pesan', danger('Gagal..', $this->upload->display_errors()));
                 }
             } else {
                 $product_data = [
@@ -1973,7 +1929,7 @@ class Admin extends Rtx_controller
                     'product_category_description' => $product_category_description
                 ];
                 $query =  $this->M_admin->updatedata('product_category', $product_data, ['product_category_id' => $product_category_id]);
-                var_dump($product_category_id);
+                $this->session->set_flashdata('pesan', success('Sukses', 'Kategori berhasil terupdate'));
             }
             redirect(base_url('admin/product_category'));
         } else {
@@ -1985,5 +1941,19 @@ class Admin extends Rtx_controller
             $this->load->view('admin/product_category');
             $this->load->view('admin/footer');
         }
+    }
+    public function product_category_delete($id)
+    {
+        cek_session('admin');
+        $query = $this->M_admin->select_where('product_category', 'product_category_id', $id);
+        $row = $query->row();
+        if ($row->product_category_image != "") {
+            unlink('./rn/product_category/' . $row->product_category_image);
+        }
+        $this->db->delete("product_category", array(
+            'product_category_id' => $id
+        ));
+        $this->session->set_flashdata('pesan', danger('Dihapus', 'Kategori berhasil di hapus'));
+        redirect(base_url('admin/product_category'));
     }
 }

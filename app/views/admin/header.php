@@ -12,6 +12,11 @@
     <title>TRECO | Administrator </title>
     <link src="<?= base_url('assets/vendor') ?>/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
+    <!-- PNotify -->
+    <link href="<?= base_url('assets/vendor') ?>/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor') ?>/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor') ?>/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="<?= base_url('assets/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -38,30 +43,30 @@
 
 
 <script type="text/javascript">
-    function keluar() {
-        swal({
-                title: "Anda Yakin Untuk Keluar?",
-                text: "Keluar Dari Halaman Administrator Untuk Mengakhiri Session Anda ?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Sedang mengalihkan", {
-                        icon: "success",
-                    });
-                    window.location.href = "<?= base_url('admin/keluar') ?>";
-                } else {
+function keluar() {
+    swal({
+            title: "Anda Yakin Untuk Keluar?",
+            text: "Keluar Dari Halaman Administrator Untuk Mengakhiri Session Anda ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Sedang mengalihkan", {
+                    icon: "success",
+                });
+                window.location.href = "<?= base_url('admin/keluar') ?>";
+            } else {
 
-                    swal({
-                        title: "Anda Membatalkan Keluar Dari Halaman Administrator",
-                        icon: "success",
-                        button: "Tutup Dialog",
-                    });
-                }
-            });
-    }
+                swal({
+                    title: "Anda Membatalkan Keluar Dari Halaman Administrator",
+                    icon: "success",
+                    button: "Tutup Dialog",
+                });
+            }
+        });
+}
 </script>
 
 <body class="nav-md">
@@ -70,7 +75,8 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="  navbar nav_title" style="border: 0;">
-                        <a href="<?= base_url('admin') ?>" class=" d-flex justify-content-center  align-items-center site_title">
+                        <a href="<?= base_url('admin') ?>"
+                            class=" d-flex justify-content-center  align-items-center site_title">
                             <h4 class="m-0">TRECO</h4>
                         </a>
                     </div>
@@ -78,7 +84,8 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="<?= base_url('assets/admin/') ?>images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img src="<?= base_url('assets/admin/') ?>images/img.jpg" alt="..."
+                                class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Selamat datang,</span>
@@ -95,17 +102,20 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="<?= base_url('admin') ?>"><i class="fa fa-home"></i> Home <span class="label label-success pull-right"> Dashboard</span></a>
+                                    <a href="<?= base_url('admin') ?>"><i class="fa fa-home"></i> Home <span
+                                            class="label label-success pull-right"> Dashboard</span></a>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Data Informasi <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-edit"></i> Data Informasi <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="<?= base_url('admin\kategori') ?>">Kategori</a></li>
                                         <li><a href="<?= base_url('admin\artikel') ?>"> Berita</a></li>
                                         <li><a href="<?= base_url('admin\halaman') ?>"> Halaman</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?= base_url('admin/menu') ?>"><i class="fa fa-bars" aria-hidden="true"></i> Menu </a>
+                                <li><a href="<?= base_url('admin/menu') ?>"><i class="fa fa-bars"
+                                            aria-hidden="true"></i> Menu </a>
                                 </li>
                                 <li>
                                     <a> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
@@ -117,7 +127,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-edit"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-edit"></i> Pengaturan <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="<?= base_url('admin\seting') ?>">Data Situs</a></li>
                                         <li><a href="<?= base_url('admin\slider') ?>">Slide</a></li>
@@ -157,20 +168,25 @@
                         <ul class=" navbar-right">
 
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="<?= base_url() ?>" class="pr-2 user-profile" aria-haspopup="true" aria-expanded="false">
+                                <a href="<?= base_url() ?>" class="pr-2 user-profile" aria-haspopup="true"
+                                    aria-expanded="false">
                                     <i class="fa fa-eye"></i> Preview Site |
                                 </a>
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="<?= base_url('assets/admin/') ?>images/img.jpg" alt=""><?= $this->session->userdata('nama') ?>
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="<?= base_url('assets/admin/') ?>images/img.jpg"
+                                        alt=""><?= $this->session->userdata('nama') ?>
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                    aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="<?= base_url('admin/profil') ?>"> Profile</a>
                                     <a class="dropdown-item" href="javascript:;">
                                         <span class="badge bg-red pull-right">50%</span>
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    <a class="dropdown-item" href="<?= base_url('admin/keluar') ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    <a class="dropdown-item" href="<?= base_url('admin/keluar') ?>"><i
+                                            class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </div>
                             </li>
 
