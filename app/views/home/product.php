@@ -1,98 +1,50 @@
 <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-            <ol>
-                <li><a href="<?= base_url() ?>">Home</a></li>
-                <li><?= $judul ?></li>
-            </ol>
-        </div>
-    </section><!-- End Breadcrumbs -->
-
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <section id="contact" class="mt-4 contact">
         <div class="container">
-            <div class="row portfolio">
-                <!-- <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-1">Besi</li>
-                        <li data-filter=".filter-2">Perumahan</li>
-                        <li data-filter=".filter-3">Umum</li>
-
-
-
-                    </ul>
-                </div> -->
-            </div>
             <div class="row">
-                <?php
-                if (!$product) { ?>
-                <h4 class="text-center">Product Tidak ditemukan</h4>
-                <?php }
-                foreach ($product as $p) :
-                    if ($p['status'] == 'new') {
-                        $status = 'bg-green';
-                    } elseif ($p['status'] == 'sale') {
-                        $status = 'bg-red';
-                    }
-                ?>
-                <div class="col-md-4 col-sm-6 d-flex flex-column align-items-center p-4 justify-content-center
-                    product-item my-3">
-                    <div class="product">
-                        <!-- <div class="tag <?= $status ?>"><?= $p['status'] ?></div> -->
-                        <a href="<?= base_url('product_view') ?>/<?= $p['product_id'] ?>/<?= $p['product_name'] ?>">
-                            <div class=" h-100">
-                                <div class="product-slider h-100 swiper">
-                                    <div class="swiper-wrapper">
-                                        <?php
-                                            $images = explode(',', str_replace(" ", "", $p['images']));
-                                            $slide = (count($images) > 1) ? "swiper-slide" : "";
-                                            foreach ($images as $image) : ?>
-
-                                        <div class="<?= $slide ?>">
-                                            <img src="<?= ($image) ?  base_url('') . "rn/product/image/" . $image : base_url('') . "assets/img/static/blank-img.jpg" ?>"
-                                                width="10" alt="<?= $image ?>">
-                                        </div>
-                                        <?php
-                                            endforeach;
-                                            ?>
-
-
-
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                </div>
-
+                <div class="col-md-3">
+                    <div class="blog p-0 indfo-box h-100 mb-4">
+                        <div class="sidebar h-100 m-0">
+                            <!-- <h3 class="sidebar-title">Cari Produk</h3>
+                            <div class="sidebar-item search-form">
+                                <form action="">
+                                    <input type="text">
+                                    <button type="submit"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div> -->
+                            <h3 class="sidebar-title">Katagory Produk</h3>
+                            <div class="sidebar-item categories">
+                                <ul>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($product_category as $pc) : ?>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input category" name="category[]" value="<?= $pc['product_category_name'] ?>" type="checkbox" id="<?= $pc['product_category_id'] ?>">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <?= $pc['product_category_name'] ?> <a href=""><span>(jo)</span></a>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    <?php endforeach ?>
+                                </ul>
                             </div>
-                        </a>
-                        <script>
-                        var swiper = new Swiper(".mySwiper", {});
-                        </script>
-                        <li class="d-flex align-items-center justify-content-center list-unstyled icons">
-                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
-                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
-                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
-                        </ul>
+                            <!-- End sidebar categories-->
+                        </div>
                     </div>
-
-                    <a href="<?= base_url('product_view') ?>/<?= $p['product_id'] ?>/<?= $p['product_name'] ?>">
-
-                        <div class=" title pt-3 "><b><?= $p['product_name'] ?></b></div>
-                    </a>
-                    <div class=" text-muted d-flex align-content-center justify-content-center">
-                        <small><i> kategori : <?= $p['product_category_name'] ?></i></small>
-                    </div>
-                    <!-- <div class="price">Rp. <?= number_format($p['price']) ?></div> -->
                 </div>
-
-                <?php endforeach; ?>
+                <div class=" col-md-9">
+                    <div class="info-box h-100 mb-4">
+                        <div id="product_items"></div>
+                    </div>
+                </div>
             </div>
-
-
         </div>
-    </section><!-- End Team Section -->
-
-
+    </section>
 </main><!-- End #main -->
+
+<script>
+
+</script>

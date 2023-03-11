@@ -154,16 +154,14 @@
                             <div class="row">
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
-                                    <div id=" portfolio " class=" border shadow position-relative portfolio col-md-6 p-0 " style="
-    height: 300px;
-">
+                                    <div id=" portfolio " class=" border shadow position-relative portfolio col-md-6 p-0 " style=" height: 300px;">
                                         <div class="portfolio-wrap h-100">
                                             <img src="<?= base_url('rn/product_category/') ?><?= $pks['product_category_image'] ?> " alt="">
                                             <!-- <div class="position-absolute  title-product">
                                                 <h4 class="m-0"><?= $pks['product_category_name'] ?></h4>
                                             </div> -->
                                             <div class=" portfolio-info">
-                                                <h1><a href="<?= base_url('product') ?>/<?= $pks['product_category_name'] ?>" class=" text-white"><b><?= $pks['product_category_name'] ?></b></a>
+                                                <h1><a href="<?= base_url('product') ?>" class=" text-white"><b><?= $pks['product_category_name'] ?></b></a>
                                                 </h1>
                                                 <!-- <h5><a href="" class=" text-white">Lihat Produk</a></h5> -->
                                             </div>

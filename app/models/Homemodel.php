@@ -255,6 +255,13 @@ class Homemodel extends CI_model
 		$this->db->limit(3);
 		return $this->db->get();
 	}
+	function product_category()
+	{
+		$this->db->select('pc.*');
+		$this->db->from('product_category pc');
+		$this->db->order_by('pc.product_category_id', 'desc');
+		return $this->db->get()->result_array();
+	}
 	function product_category_first()
 	{
 		$this->db->select('pc.*');
@@ -274,13 +281,20 @@ class Homemodel extends CI_model
 	}
 	function product($category = '')
 	{
+		$ct = [];
+		$where = '';
+		if ($category) {
+			for ($i = 0; $i < count((array)$category); $i++) {
+				$ct[] = ' pc.product_category_name =  "' . $category[$i] . '" ';
+			}
+			$ct = implode("or", $ct);
+			$where =	$this->db->where('(' . $ct . ')');
+		}
 		$this->db->select('p.*,pc.product_category_name,GROUP_CONCAT(pi.image_name SEPARATOR ",") as images');
 		$this->db->from('product p');
 		$this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
 		$this->db->join('product_images pi', 'pi.product_id = p.product_id', 'left');
-		if ($category) {
-			$this->db->where('pc.product_category_name', $category);
-		}
+		$where;
 		$this->db->group_by('p.product_id');
 		$query = $this->db->get();
 		return $query->result_array();

@@ -432,16 +432,25 @@ class Home extends Rtx_controller
 	function product($category = '')
 	{
 		$category = urldecode($category);
-		// die;
 		$x = [
 			'judul' => 'Product',
-			'product' => $this->homemodel->product($category)
+			'product' => $this->homemodel->product($category),
+			'product_category' => $this->homemodel->product_category()
 		];
 		$this->template->load('template', 'home/product', $x);
 	}
+	function product_items()
+	{
+		$category = $this->input->post('category');
+		$x = [
+			'judul' => 'Product',
+			'product' => $this->homemodel->product($category),
+		];
+		$this->load->view('home/product_items', $x, FALSE);
+	}
+
 	function product_view($id = '')
 	{
-		// die;
 		$x = [
 			'judul' => 'Product Detail',
 			'product' => $this->homemodel->product_view($id)
