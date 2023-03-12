@@ -1,6 +1,6 @@
-<main id="main">
+<main id="main" style="background-color: #f3f3f3;">
     <!-- ======= Team Section ======= -->
-    <section id="contact" class="mt-4 contact">
+    <section id="contact" class="pt-4 contact">
         <div class="container">
 
             <div class="row">
