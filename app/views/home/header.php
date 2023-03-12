@@ -28,7 +28,7 @@
 
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url('') ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url('') ?>assets/css/style1.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/css/sweetAlert6.css" rel="stylesheet">
     <script src=" <?= base_url('assets') ?>/js/sweetAlert6.js"></script>
 
@@ -132,14 +132,14 @@
                     </div>
 
                 </div>
-                <form action="/cari" method="POST">
+                <!-- <form action="/cari" method="POST">
                     <div class="d-flex search ps-4 ">
                         <div class="container-2">
                             <span class="icon"><i class="fa fa-search"></i></span>
                             <input name="search" type="search" id="search" placeholder="Search..." />
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
 
         </div>

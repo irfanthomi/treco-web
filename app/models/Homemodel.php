@@ -257,7 +257,7 @@ class Homemodel extends CI_model
 	}
 	function product_category()
 	{
-		$this->db->select('pc.*');
+		$this->db->select('pc.*,(select count(*) from product p where p.product_category=pc.product_category_id) as total');
 		$this->db->from('product_category pc');
 		$this->db->order_by('pc.product_category_id', 'desc');
 		return $this->db->get()->result_array();
