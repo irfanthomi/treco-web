@@ -1,18 +1,18 @@
 <style>
-.title-product {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    .title-product {
+        position: absolute;
+        top: 50%;
+        left: 50%;
 
-    padding: .8em 1.2em;
-    color: black;
+        padding: .8em 1.2em;
+        color: black;
 
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 </style>
 <main id="main">
     <section id="hero">
@@ -23,17 +23,16 @@
                     <!-- Slide 1 -->
                     <?php $no = 1;
                     foreach ($slide->result_array() as $slid) : $active = $no++ == 1 ? "active" : ""; ?>
-                    <!-- Slide <?= $no++ ?> -->
-                    <div class="carousel-item <?= $active ?> "
-                        style=" background-image: url(<?= base_url('rn/slider/' . $slid['gambar']) ?>">
-                        <!-- <div class="carousel-container">
+                        <!-- Slide <?= $no++ ?> -->
+                        <div class="carousel-item <?= $active ?> " style=" background-image: url(<?= base_url('rn/slider/' . $slid['gambar']) ?>">
+                            <!-- <div class="carousel-container">
                         <div class="carousel-content animate__fadeIn ">
                             <h2 class="animate__animated animate__fadeInDown"><?= $slid['judul'] ?> <span>IDM</span>
                             </h2>
                             <p class="animate__animated animate__fadeInUp"><?= $slid['isi'] ?></p>
                         </div>
                     </div> -->
-                    </div>
+                        </div>
                     <?php endforeach; ?>
                 </div>
                 <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -128,11 +127,10 @@
                 <div data-aos="fade-right" class="col-lg-6 d-flex align-items-center">
                     <img src="<?= base_url('rn/home/img/') ?><?= $setting->logo ?>" class=" logo-home img-fluid" alt="">
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="200"
-                    class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
+                <div data-aos="zoom-in" data-aos-delay="200" class=" d-flex align-items-center col-lg-6 pt-4 pt-lg-0 content">
                     <div>
                         <h3 class="text-center text-md-start"><?= $setting->Nama ?></h3>
-                        <p class="text-center text-md-start">
+                        <p style="text-align: justify;">
                             <?= $setting->deskripsi ?>
                         </p>
                     </div>
@@ -156,23 +154,19 @@
                             <div class="row">
                                 <?php
                                 foreach ($product_category_second as $pks) : ?>
-                                <div data-aos="zoom-in" data-aos-duration="1000" id=" portfolio "
-                                    class=" border shadow position-relative portfolio col-md-6 p-0 "
-                                    style=" height: 300px;">
-                                    <div class="portfolio-wrap h-100">
-                                        <img src="<?= base_url('rn/product_category/') ?><?= $pks['product_category_image'] ?> "
-                                            alt="">
-                                        <!-- <div class="position-absolute  title-product">
+                                    <div data-aos="zoom-in" data-aos-duration="1000" id=" portfolio " class=" border shadow position-relative portfolio col-md-6 p-0 " style=" height: 300px;">
+                                        <div class="portfolio-wrap h-100">
+                                            <img src="<?= base_url('rn/product_category/') ?><?= $pks['product_category_image'] ?> " alt="">
+                                            <!-- <div class="position-absolute  title-product">
                                                 <h4 class="m-0"><?= $pks['product_category_name'] ?></h4>
                                             </div> -->
-                                        <div class=" portfolio-info">
-                                            <h1><a href="<?= base_url('product') ?>"
-                                                    class=" text-white"><b><?= $pks['product_category_name'] ?></b></a>
-                                            </h1>
-                                            <!-- <h5><a href="" class=" text-white">Lihat Produk</a></h5> -->
+                                            <div class=" portfolio-info">
+                                                <h1><a href="<?= base_url('product') ?>" class=" text-white"><b><?= $pks['product_category_name'] ?></b></a>
+                                                </h1>
+                                                <!-- <h5><a href="" class=" text-white">Lihat Produk</a></h5> -->
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -198,18 +192,17 @@
                 <div class="swiper-wrapper">
                     <?php
                     foreach ($latest->result_array() as $lt) : ?>
-                    <div class="swiper-slide">
-                        <div id="featured" class="featured ">
-                            <div class="icon-box w-100">
-                                <div class=" w-100">
-                                    <img width="100%" src="<?= base_url('rn/gambar/' . $lt['gambar']) ?>">
-                                </div>
-                                <div class=" mt-2"><a class="text-black"
-                                        href="<?= detail_informasi($lt['id_artikel'], $lt['judul']) ?>"><?= $lt['judul'] ?></a>
+                        <div class="swiper-slide">
+                            <div id="featured" class="featured ">
+                                <div class="icon-box w-100">
+                                    <div class=" w-100">
+                                        <img width="100%" src="<?= base_url('rn/gambar/' . $lt['gambar']) ?>">
+                                    </div>
+                                    <div class=" mt-2"><a class="text-black" href="<?= detail_informasi($lt['id_artikel'], $lt['judul']) ?>"><?= $lt['judul'] ?></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php endforeach; ?>
                 </div>
                 <div class="swiper-pagination"></div>
