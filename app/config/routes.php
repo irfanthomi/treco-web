@@ -17,6 +17,7 @@ $route['video']                      = 'home/video';
 $route['video/(:any)']             = 'home/video/$1';
 $route['download']                 = 'home/download';
 $route['product']                  = 'home/product';
+$route['project']                  = 'home/project';
 $route['product/(:any)']                  = 'home/product/$1';
 $route['product_view/(:any)/(:any)']                  = 'home/product_view/$1/$2';
 $route['cari']                     = 'home/cari';

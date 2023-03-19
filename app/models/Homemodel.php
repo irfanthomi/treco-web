@@ -310,4 +310,14 @@ class Homemodel extends CI_model
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+
+	function project()
+	{
+		$this->db->select('p.*,GROUP_CONCAT(pi.image_name SEPARATOR ",") as images');
+		$this->db->from('project p');
+		$this->db->join('project_images pi', 'pi.project_id = p.project_id', 'left');
+		$this->db->group_by('p.project_id');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 }

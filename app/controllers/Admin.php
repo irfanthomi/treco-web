@@ -1731,7 +1731,7 @@ class Admin extends Rtx_controller
                     $config['upload_path'] = './rn/product/image/'; //path folder
                     $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
                     $config['max_size'] = '5000'; // max_size in kb
-                    $config['file_name'] = "" . $product_id . "-" .  $this->input->post('product_name') . "-" . ($i + 1) . "";
+                    $config['file_name'] = "" . $product_id . "-" . ($i + 1) . "";
 
                     $this->load->library('upload', $config);
                     $this->upload->initialize($config);
@@ -1809,7 +1809,7 @@ class Admin extends Rtx_controller
                         $config['upload_path'] = './rn/product/image/'; //path folder
                         $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
                         $config['max_size'] = '5000'; // max_size in kb
-                        $config['file_name'] = "" . $product_id . "-" .  $product_name . "-" . ($i + 1) . "";
+                        $config['file_name'] = "" . $product_id  . "-" . ($i + 1) . "";
 
                         $this->load->library('upload', $config);
                         $this->upload->initialize($config);
@@ -1859,14 +1859,12 @@ class Admin extends Rtx_controller
     {
         cek_session('admin');
         $query = $this->M_admin->select_where('product', 'product_id', $id);
-        $row = $query->row();
-        if ($row->gambar != "") {
-            unlink('./rn/product/image/' . $row->product_image);
-        } else {
+        $query_images = $this->M_admin->select_where('product_images', 'product_id', $id)->result_array();
+        for ($i = 0; $i < count($query_images); $i++) {
+            unlink('./rn/product/image/' . $query_images[$i]['image_name']);
+            $this->db->delete("product_images", ['id' => $query_images[$i]['id'], 'product_id' => $query_images[$i]['product_id']]);
         }
-        $this->db->delete("product", array(
-            'product_id' => $id
-        ));
+        $this->db->delete("product", ['product_id' => $id]);
         $this->session->set_flashdata('pesan', danger('Dihapus', 'Product berhasil di hapus'));
         redirect(base_url('admin/product'));
     }
@@ -1955,5 +1953,173 @@ class Admin extends Rtx_controller
         ));
         $this->session->set_flashdata('pesan', danger('Dihapus', 'Kategori berhasil di hapus'));
         redirect(base_url('admin/product_category'));
+    }
+
+
+    // project
+    public function project()
+    {
+        if (isset($_POST['add'])) {
+            $count = count($_FILES['files']['name']);
+            $data = [];
+            $project_data = [
+                'project_name' => $this->input->post('project_name'),
+                'project_description' => $this->input->post('project_description'),
+                'createBy' => $this->session->userdata('id_user')
+            ];
+
+            // insert data project
+            $project_id = $this->M_admin->addproject('project', $project_data);
+            if ($project_id) {
+                $this->session->set_flashdata('pesan', success('Sukses', 'Data project berhasil Ditambahkan'));
+            }
+            // var_dump($_FILES);
+            // die;
+            for ($i = 0; $i < $count; $i++) {
+                if (!empty($_FILES['files']['name'][$i])) {
+                    $_FILES['file']['name'] = $_FILES['files']['name'][$i];
+                    $_FILES['file']['type'] = $_FILES['files']['type'][$i];
+                    $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+                    $_FILES['file']['error'] = $_FILES['files']['error'][$i];
+                    $_FILES['file']['size'] = $_FILES['files']['size'][$i];
+                    $config['upload_path'] = './rn/project/image/'; //path folder 
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan 
+                    $config['max_size'] = '5000'; // max_size in kb 
+                    $config['file_name'] = "" . $project_id . "-" . ($i + 1) . "";
+
+                    $this->load->library('upload', $config);
+                    $this->upload->initialize($config);
+                    if ($this->upload->do_upload('file')) {
+                        $uploadData = $this->upload->data();
+                        $filename = $uploadData['file_name'];
+                        $data['totalFiles'][] = $filename;
+
+                        // insert image project
+                        $this->M_admin->add_project_image($project_id, $filename);
+                    } else {
+                        $this->session->set_flashdata('pesan', danger('Gagal', $this->upload->display_errors()));
+                    }
+                }
+            }
+
+            redirect(base_url('admin/project'));
+        } else {
+            $data = [
+                'judul' => "List Project",
+                'project' => $this->M_admin->project(),
+            ];
+            $this->load->view('admin/header', $data);
+            $this->load->view('admin/project');
+            $this->load->view('admin/footer');
+        }
+    }
+    public function projectEdit($project_id = '')
+    {
+        cek_table('project', 'project_id', $project_id);
+        if ($project_id == '') {
+            redirect(base_url('admin/project'));
+        }
+        $project = $this->M_admin->projectEdit($project_id);
+        $project_images = $this->M_admin->projectImage($project_id);
+        $x = [
+            'judul' => "Edit project",
+            'aksi' => "edit",
+            'project' => $project,
+            'project_images' => $project_images,
+        ];
+        if (isset($_POST['edit'])) {
+            $project_name = $this->input->post('project_name');
+            $project_description = $this->input->post('project_description');
+            $id_user = $this->session->userdata('id_user');
+            // var_dump($this->input->post());
+            // die;
+            if (empty($_FILES['files']['name'][0])) {
+                $dataproject = array(
+                    'project_name' => $project_name,
+                    'project_description' => $project_description,
+                );
+                $query = $this->M_admin->updatedata('project', $dataproject, ['project_id' => $project_id]);
+                if ($query) {
+                    $this->session->set_flashdata('pesan', success('Sukses', 'project berhasil terupdate'));
+                    redirect(base_url('admin/projectEdit/') . $project_id);
+                } else {
+                    $this->session->set_flashdata('pesan', '<span class="callout text-success callout-danger">Data gagal Di Edit</span>');
+                    redirect(base_url('admin/projectEdit/') . $project_id);
+                }
+            } else {
+                $count = count($_FILES['files']['name']);
+                $data = [];
+                for ($i = 0; $i < $count; $i++) {
+                    if (!empty($_FILES['files']['name'][$i])) {
+                        $_FILES['file']['name'] = $_FILES['files']['name'][$i];
+                        $_FILES['file']['type'] = $_FILES['files']['type'][$i];
+                        $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+                        $_FILES['file']['error'] = $_FILES['files']['error'][$i];
+                        $_FILES['file']['size'] = $_FILES['files']['size'][$i];
+                        $config['upload_path'] = './rn/project/image/'; //path folder 
+                        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan 
+                        $config['max_size'] = '5000'; // max_size in kb 
+                        $config['file_name'] = "" . $project_id . "-" . ($i + 1) . "";
+                        $this->load->library('upload', $config);
+                        $this->upload->initialize($config);
+                        if ($this->upload->do_upload('file')) {
+                            $uploadData = $this->upload->data();
+                            $filename = $uploadData['file_name'];
+                            $data['totalFiles'][] = $filename;
+
+                            // insert image project
+                            $this->M_admin->add_project_image($project_id, $filename);
+                        } else {
+                            echo $this->upload->display_errors();
+                        }
+                    }
+                }
+                $this->session->set_flashdata('pesan', success('Sukses', 'project berhasil terupdate'));
+                redirect(base_url('admin/projectEdit/') . $project_id);
+            }
+        } else {
+            $x['judul'] = "Edit project";
+            $this->load->view('admin/header', $x);
+            $this->load->view('admin/project_edit');
+            $this->load->view('admin/footer');
+        }
+    }
+    public function projectDelete($id)
+    {
+        cek_session('admin');
+        $query = $this->M_admin->select_where('project', 'project_id', $id);
+        $query_images = $this->M_admin->select_where('project_images', 'project_id', $id)->result_array();
+        for ($i = 0; $i < count($query_images); $i++) {
+            unlink('./rn/project/image/' . $query_images[$i]['image_name']);
+            $this->db->delete("project_images", ['id' => $query_images[$i]['id'], 'project_id' => $query_images[$i]['project_id']]);
+        }
+        $row = $query->row();
+        if ($row->gambar != "") {
+            unlink('./rn/project/image/' . $row->project_image);
+        }
+        $this->db->delete("project", array(
+            'project_id' => $id
+        ));
+        $this->session->set_flashdata('pesan', danger('Dihapus', 'Product berhasil di hapus'));
+        redirect(base_url('admin/project'));
+    }
+    public function projectImageDelete($image_id, $project_id)
+    {
+        cek_session('admin');
+        $query = $this->M_admin->select_where('project_images', 'id', $image_id);
+        $row = $query->row();
+
+        if ($row->image_name != "") {
+            unlink('./rn/project/image/' . $row->image_name);
+        } else {
+        }
+        $this->db->delete("project_images", array(
+            'id' => $image_id,
+            'project_id' => $project_id
+        ));
+
+        $this->session->set_flashdata('pesan', danger('Dihapus', 'gambar berhasil di hapus'));
+
+        redirect(base_url('admin/projectEdit/') . $project_id);
     }
 }

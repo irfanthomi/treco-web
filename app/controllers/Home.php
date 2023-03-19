@@ -469,6 +469,7 @@ class Home extends Rtx_controller
 	{
 		$x = [
 			'judul' => 'Our project',
+			'project' => $this->homemodel->project(),
 		];
 		$this->template->load('template', 'home/project', $x);
 	}

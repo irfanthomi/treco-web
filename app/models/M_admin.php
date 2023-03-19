@@ -54,11 +54,11 @@ class M_admin extends CI_model
     $this->db->select('p.*,pc.product_category_name');
     $this->db->from('product p');
     $this->db->where('product_id', $id);
-
     $this->db->join('product_category pc', 'pc.product_category_id = p.product_category');
-
     return $this->db->get()->row_array();
   }
+
+
   function productImage($id)
   {
     $this->db->select('p.*');
@@ -214,7 +214,43 @@ class M_admin extends CI_model
     $data = $this->db->get()->row_array();
     return $data['tg'];
   }
+  function project()
+  {
+    $this->db->select('p.*');
+    $this->db->from('project p');
+    $this->db->order_by('project_id', 'desc');
 
+    return $this->db->get()->result_array();
+  }
 
+  function projectEdit($id)
+  {
+    $this->db->select('*');
+    $this->db->from('project ');
+    $this->db->where('project_id', $id);
+    return $this->db->get()->row_array();
+  }
+
+  function projectImage($id)
+  {
+    $this->db->select('p.*');
+    $this->db->from('project_images p');
+    $this->db->where('project_id', $id);
+    return $this->db->get()->result_array();
+  }
+  function add_project_image($product_id, $image_name)
+  {
+    $image_data = array(
+      'project_id' => $product_id,
+      'image_name' => $image_name
+    );
+    $this->db->insert('project_images', $image_data);
+  }
+  function addProject($tabel = '', $data = '')
+  {
+
+    $this->db->insert($tabel, $data);
+    return $this->db->insert_id();
+  }
   /*end penentuan*/
 }

@@ -119,13 +119,18 @@ function keluar() {
                                 </li>
                                 <li>
                                     <a> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                                        </i> Product <span class="fa fa-chevron-down"></span>
+                                        Product <span class="fa fa-chevron-down"></span>
                                     </a>
                                     <ul class="nav child_menu">
                                         <li><a href="<?= base_url('admin\product') ?>">List product</a></li>
                                         <li><a href="<?= base_url('admin\product_category') ?>">kategori product</a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li><a href="<?= base_url('admin/project') ?>">
+                                        <i class="fa fa-cubes" aria-hidden="true"></i>
+                                        Project
+                                    </a>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Pengaturan <span
                                             class="fa fa-chevron-down"></span></a>
