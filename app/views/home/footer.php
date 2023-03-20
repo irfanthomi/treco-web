@@ -27,6 +27,13 @@
                     <strong>Telp. :</strong> <?= $setting->telepone ?><br>
                     <strong>Email :</strong> <?= $setting->email ?><br>
                     </p>
+                    <div class="row">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15957.14895299482!2d100.3543144!3d-0.9348603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b95abadc9921%3A0x6122fb3ee27cbc4f!2sTreco%20Head%20Office!5e0!3m2!1sid!2sid!4v1679285049918!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
                 <div class=" col-md-6 footer-info">
                     <h3>Tentang <?= $setting->Nama ?></h3>
